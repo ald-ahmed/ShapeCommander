@@ -1,0 +1,14 @@
+newmtl Material #203
+Ns 1
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+map_Kd wrl0.png
+d 1
+newmtl Material #204
+Ns 1
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+map_Kd wrl1.png
+d 1

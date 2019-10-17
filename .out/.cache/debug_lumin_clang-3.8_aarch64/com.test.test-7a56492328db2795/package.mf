@@ -1,0 +1,304 @@
+{
+ "entries": [
+  {
+   "compression": 8,
+   "hash": "b9686e10970f0c0055e5140334c8c2edc11933ec",
+   "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
+   "size": 3076124,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "e9599c25a58dba7b5591dd373b0a0cfdda73295d",
+   "pkgpath": "bin/libil2cpp.so",
+   "size": 46878544,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Native/libil2cpp.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "65d8b2fac553222327c9648531a6f771cbcced8c",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/libil2cpp.so-f8a41b62f96823a7",
+   "xfrm_size": 46879302
+  },
+  {
+   "compression": 8,
+   "hash": "fa2b8ff146caf64688e7aa835af0034ca81b5505",
+   "pkgpath": "bin/AudioPluginMSASpatializer.so",
+   "size": 282448,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "8df84ecf434ba77c8e4b8ccc027e4f3bd194d461",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/AudioPluginMSASpatializer.so-7f24342cbbccb2bd",
+   "xfrm_size": 283206
+  },
+  {
+   "compression": 8,
+   "hash": "134eac416c583401014c558ed5af6c926fdc258b",
+   "pkgpath": "bin/LuminMediaPlayer.dll",
+   "size": 68096,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/LuminMediaPlayer.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "bada121f1f4ec16ace56affb65164d688458799c",
+   "pkgpath": "bin/LuminUnity.dll",
+   "size": 329216,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/LuminUnity.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "b8ce049d2e85f27cc7346d7551d1853b20e78461",
+   "pkgpath": "bin/MSA.Runtime.dll",
+   "size": 22016,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/MSA.Runtime.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "a71acc50817a0929bccc93cbe7619d57d25d1b17",
+   "pkgpath": "bin/UnityMagicLeap.so",
+   "size": 3077192,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "c663031bf5eea70cfebe962ea4115de73f813b1f",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/UnityMagicLeap.so-7f24342cbbccb2bd",
+   "xfrm_size": 3077950
+  },
+  {
+   "compression": 8,
+   "hash": "fbfa4a6aa20b14e0f60550676e5d34bebb99d46d",
+   "pkgpath": "bin/libml_camera_plugin.so",
+   "size": 14184,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "a1ee2af9ffd9aee92386c929deb96d0ac4204600",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/libml_camera_plugin.so-7f24342cbbccb2bd",
+   "xfrm_size": 14942
+  },
+  {
+   "compression": 8,
+   "hash": "88ac1047e0ac5686d703471c3115f719ca66a4e8",
+   "pkgpath": "bin/libml_mediaplayer_plugin.so",
+   "size": 67624,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "c84655068260ea3a29a6032b28396067e629f134",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/libml_mediaplayer_plugin.so-7f24342cbbccb2bd",
+   "xfrm_size": 68382
+  },
+  {
+   "compression": 8,
+   "hash": "984e4d2049ed5491b970ba15d1e8c8cadac0896e",
+   "pkgpath": "bin/nunit.framework.dll",
+   "size": 339968,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/nunit.framework.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "e6124da6073b916e29e013cf3ae3f58a4c5fdb0e",
+   "pkgpath": "Data/Resources/mscorlib.dll-resources.dat",
+   "size": 337563,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/mscorlib.dll-resources.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "fa10859a933989c5961257c02d9f4fcf042044f1",
+   "pkgpath": "Data/Resources/unity default resources",
+   "size": 3689324,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/unity default resources"
+  },
+  {
+   "compression": 8,
+   "hash": "88bb7afbcf63275d0962b4c7c7cede30a1b0d014",
+   "pkgpath": "Data/Resources/unity_builtin_extra",
+   "size": 770468,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/unity_builtin_extra"
+  },
+  {
+   "compression": 8,
+   "hash": "778891100a8030ad6096db64784c6e5d67c28378",
+   "pkgpath": "Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json",
+   "size": 417,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json"
+  },
+  {
+   "compression": 8,
+   "hash": "f226dfc0f1097b18c77eb2198b6257be5b02a613",
+   "pkgpath": "Data/boot.config",
+   "size": 123,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/boot.config"
+  },
+  {
+   "compression": 8,
+   "hash": "1461d3e6e49f053cd6ce1ef4cf9c446c26450fd0",
+   "pkgpath": "Data/globalgamemanagers",
+   "size": 60160,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/globalgamemanagers"
+  },
+  {
+   "compression": 8,
+   "hash": "ee64282a72e0ca47322e1bf9f9cc673f66cfc4f3",
+   "pkgpath": "Data/globalgamemanagers.assets",
+   "size": 84436,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/globalgamemanagers.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "d6b40bed347a3c31488af8871249292dd8d6769a",
+   "pkgpath": "Data/level0",
+   "size": 22692,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/level0"
+  },
+  {
+   "compression": 8,
+   "hash": "ab65805793388d15a2837e363df1ccb966517059",
+   "pkgpath": "Data/level0.resS",
+   "size": 131232,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/level0.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "b7cd1c985d245edae69c7bad4c0139dd7969a258",
+   "pkgpath": "Data/resources.assets",
+   "size": 551248,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "1d5e5447a0f0b085b695376c9fdb7738e07e4f23",
+   "pkgpath": "Data/resources.assets.resS",
+   "size": 360480,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.assets.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "72df8187e8b57e64fb93926431a0053987da4917",
+   "pkgpath": "Data/resources.resource",
+   "size": 5875136,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.resource"
+  },
+  {
+   "compression": 8,
+   "hash": "62c77a8c52c00d3be1d1d0f062b14e12655ffd01",
+   "pkgpath": "Data/sharedassets0.assets",
+   "size": 675160,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/sharedassets0.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "11214b4b0ec49dca7205ce9d91780b58cf9e2d1f",
+   "pkgpath": "Data/sharedassets0.assets.resS",
+   "size": 6799344,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/sharedassets0.assets.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "61d3d50aa3472ee134e4c14f0f43bcbdc0215e33",
+   "pkgpath": "bin/Player.elf",
+   "size": 20710840,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Player.elf",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "dcb677aeaa9392053eb2f9aa0b5c63c4e6ec849b",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/Player.elf-7f339d92f5fe183a",
+   "xfrm_size": 20711598
+  },
+  {
+   "compression": 8,
+   "hash": "56b0a133ac2ab5de11603651efa9141ccbc168bd",
+   "pkgpath": "manifest.xml",
+   "size": 1799,
+   "src": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/manifest.xml",
+   "xfrm_flags": {
+    "manifest": {
+     "cert_hash": "71fac325eb6e8d1eaee3d320ee87622014769104",
+     "developer_id": "0477be96-c13b-4359-8f2d-968558cdfd60"
+    }
+   },
+   "xfrm_hash": "f69bf4633279ebc8eaef8ac734a2740a1a685f30",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/manifest.xml-7f339d92f5fe183a",
+   "xfrm_size": 1812
+  },
+  {
+   "compression": 8,
+   "hash": "5925de9f4d7b83c65d1fd7b25ced5f0bf8c27e73",
+   "pkgpath": "bin/libc++_shared.so",
+   "size": 976832,
+   "src": "/Users/Ngrabar/MagicLeap/mlsdk/v0.22.0/lumin/stl/libc++/lib/libc++_shared.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "1d568c6118ec2bb321b3c276234c979c0d5a4fea",
+   "xfrm_path": "/Users/Ngrabar/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-7a56492328db2795/libc++_shared.so-cfa114c4985b1db1",
+   "xfrm_size": 977590
+  }
+ ],
+ "pkgflags": {
+  "signed": {
+   "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+  },
+  "taildata": {
+   "debuggable": true,
+   "devcert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert",
+   "sbox": "USER",
+   "version": 3
+  }
+ }
+}

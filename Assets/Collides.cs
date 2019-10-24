@@ -32,6 +32,10 @@ public class Collides : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         print("Collision detected with trigger object " + other.name);
+        if (other.gameObject.GetComponent<Clickable>())
+        {
+            other.gameObject.GetComponent<Clickable>().Highlighted();
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -42,6 +46,10 @@ public class Collides : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         print(gameObject.name + " and trigger object " + other.name + " are no longer colliding");
+        if (other.gameObject.GetComponent<Clickable>())
+        {
+            other.gameObject.GetComponent<Clickable>().UnHighlighted();
+        }
     }
 
 

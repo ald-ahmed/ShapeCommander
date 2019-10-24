@@ -1,0 +1,297 @@
+{
+ "entries": [
+  {
+   "compression": 8,
+   "hash": "1822937e3bd863f55c0c3cc2b9d4f4319dd6cc3d",
+   "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
+   "size": 3289484,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "3eea32b885bf81e9294a85dd8b5779b7e342938d",
+   "pkgpath": "bin/libil2cpp.so",
+   "size": 53326128,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Native/libil2cpp.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "6b4f6198f2f02dcc54293685b9bc42a9edce2c7e",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/libil2cpp.so-689df88593368a73",
+   "xfrm_size": 53326886
+  },
+  {
+   "compression": 8,
+   "hash": "fa2b8ff146caf64688e7aa835af0034ca81b5505",
+   "pkgpath": "bin/AudioPluginMSASpatializer.so",
+   "size": 282448,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "065d4dc6de90a97922458651da246c4a3e938ead",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/AudioPluginMSASpatializer.so-bd7456701f25b6ab",
+   "xfrm_size": 283206
+  },
+  {
+   "compression": 8,
+   "hash": "614b9de6e899652e58413cd57d16e3fb739f0842",
+   "pkgpath": "bin/LuminMediaPlayer.dll",
+   "size": 68096,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/LuminMediaPlayer.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "4f606a4f137b54911a59008b32cd19261fd7f041",
+   "pkgpath": "bin/LuminUnity.dll",
+   "size": 329216,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/LuminUnity.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "b8ce049d2e85f27cc7346d7551d1853b20e78461",
+   "pkgpath": "bin/MSA.Runtime.dll",
+   "size": 22016,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/MSA.Runtime.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "a71acc50817a0929bccc93cbe7619d57d25d1b17",
+   "pkgpath": "bin/UnityMagicLeap.so",
+   "size": 3077192,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "ec3607e549a710e2857663b8f40654d7411dd3f2",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/UnityMagicLeap.so-bd7456701f25b6ab",
+   "xfrm_size": 3077950
+  },
+  {
+   "compression": 8,
+   "hash": "fbfa4a6aa20b14e0f60550676e5d34bebb99d46d",
+   "pkgpath": "bin/libml_camera_plugin.so",
+   "size": 14184,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "4a65cf7880699c93f72a7d30f6dd16bcf89c5448",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/libml_camera_plugin.so-bd7456701f25b6ab",
+   "xfrm_size": 14942
+  },
+  {
+   "compression": 8,
+   "hash": "88ac1047e0ac5686d703471c3115f719ca66a4e8",
+   "pkgpath": "bin/libml_mediaplayer_plugin.so",
+   "size": 67624,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "c7771b3f413fe28078872ca103384a652638458b",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/libml_mediaplayer_plugin.so-bd7456701f25b6ab",
+   "xfrm_size": 68382
+  },
+  {
+   "compression": 8,
+   "hash": "984e4d2049ed5491b970ba15d1e8c8cadac0896e",
+   "pkgpath": "bin/nunit.framework.dll",
+   "size": 339968,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Plugins/nunit.framework.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "e6124da6073b916e29e013cf3ae3f58a4c5fdb0e",
+   "pkgpath": "Data/Resources/mscorlib.dll-resources.dat",
+   "size": 337563,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/mscorlib.dll-resources.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "fa10859a933989c5961257c02d9f4fcf042044f1",
+   "pkgpath": "Data/Resources/unity default resources",
+   "size": 3689324,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/unity default resources"
+  },
+  {
+   "compression": 8,
+   "hash": "a5eeaec1a39ec62f72e4f94518f71f0bda645b69",
+   "pkgpath": "Data/Resources/unity_builtin_extra",
+   "size": 770468,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/Resources/unity_builtin_extra"
+  },
+  {
+   "compression": 8,
+   "hash": "778891100a8030ad6096db64784c6e5d67c28378",
+   "pkgpath": "Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json",
+   "size": 417,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json"
+  },
+  {
+   "compression": 8,
+   "hash": "f226dfc0f1097b18c77eb2198b6257be5b02a613",
+   "pkgpath": "Data/boot.config",
+   "size": 123,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/boot.config"
+  },
+  {
+   "compression": 8,
+   "hash": "597030b806c3fd9eb89af363c16ed708401a7b8f",
+   "pkgpath": "Data/globalgamemanagers",
+   "size": 60088,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/globalgamemanagers"
+  },
+  {
+   "compression": 8,
+   "hash": "c562f318d48ccf9d750e8c43dadbc8f59ab90c8f",
+   "pkgpath": "Data/globalgamemanagers.assets",
+   "size": 84276,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/globalgamemanagers.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "c8cf6ac386b75060be539e34650dd8d606d2ca2b",
+   "pkgpath": "Data/level0",
+   "size": 6012,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/level0"
+  },
+  {
+   "compression": 8,
+   "hash": "ab65805793388d15a2837e363df1ccb966517059",
+   "pkgpath": "Data/level0.resS",
+   "size": 131232,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/level0.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "74b6e643444196c78b3b15f3099a1f3f968512d5",
+   "pkgpath": "Data/resources.assets",
+   "size": 551248,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "1d5e5447a0f0b085b695376c9fdb7738e07e4f23",
+   "pkgpath": "Data/resources.assets.resS",
+   "size": 360480,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.assets.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "72df8187e8b57e64fb93926431a0053987da4917",
+   "pkgpath": "Data/resources.resource",
+   "size": 5875136,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/resources.resource"
+  },
+  {
+   "compression": 8,
+   "hash": "c532a8c3dd3a5086950f048a0692514263ef9726",
+   "pkgpath": "Data/sharedassets0.assets",
+   "size": 210648,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Data/sharedassets0.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "1d0b867cf3a8813ca25dca125b079fc066fc9a63",
+   "pkgpath": "bin/Player.elf",
+   "size": 20710840,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/Player.elf",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "172e51ef3f8b58f4401c197e3e9d480ea0d57778",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/Player.elf-4961b41fa71453b6",
+   "xfrm_size": 20711598
+  },
+  {
+   "compression": 8,
+   "hash": "3b045769fda7cd58bfa6168acc2a2de0cdfe7fc6",
+   "pkgpath": "manifest.xml",
+   "size": 1923,
+   "src": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/manifest.xml",
+   "xfrm_flags": {
+    "manifest": {
+     "cert_hash": "a1a5bf4609aca13a3e404b714b47da55130ffc6c",
+     "developer_id": "f4e42cd4-9c31-43ad-96da-ec1430d7d636"
+    }
+   },
+   "xfrm_hash": "5a65f3e5263ffdbe28c50e90223fe4d74f77c6b6",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/manifest.xml-4961b41fa71453b6",
+   "xfrm_size": 1936
+  },
+  {
+   "compression": 8,
+   "hash": "5925de9f4d7b83c65d1fd7b25ced5f0bf8c27e73",
+   "pkgpath": "bin/libc++_shared.so",
+   "size": 976832,
+   "src": "/Users/ahmedaldulaimy/MagicLeap/mlsdk/v0.22.0/lumin/stl/libc++/lib/libc++_shared.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "ccd0b633ebe275a0eb2afa4fb18e245e130846dc",
+   "xfrm_path": "/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/.out/.cache/debug_lumin_clang-3.8_aarch64/com.test.test-9c788f8cb32e7846/libc++_shared.so-f4ee7ba59de267f1",
+   "xfrm_size": 977590
+  }
+ ],
+ "pkgflags": {
+  "signed": {
+   "cert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert"
+  },
+  "taildata": {
+   "debuggable": true,
+   "devcert": "/Users/ahmedaldulaimy/Downloads/privatekey (1)/123aaa.cert",
+   "sbox": "USER",
+   "version": 3
+  }
+ }
+}

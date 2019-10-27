@@ -4,8 +4,48 @@ using System.Collections;
 
 public class Collides : MonoBehaviour
 {
+    private LineRenderer lineRenderer;
+    private GameObject lastHit = null;
 
-    void OnCollisionEnter(Collision collisionInfo)
+    private void Start()
+    {
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+    }
+    private void Update()
+    {
+        lineRenderer.SetPosition(0, transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            lineRenderer.SetPosition(1, hit.point);
+            if (lastHit != null)
+            {
+                if (!hit.collider.gameObject.Equals(lastHit))
+                {
+                    lastHit.GetComponent<Clickable>().UnHighlighted();
+                }
+            }
+
+
+            if (hit.collider.gameObject.GetComponent<Clickable>())
+            {
+                hit.collider.gameObject.GetComponent<Clickable>().Highlighted();
+
+                lastHit = hit.collider.gameObject;
+            }
+
+        }
+        else
+        {
+            if (lastHit != null)
+            {
+                lastHit.GetComponent<Clickable>().UnHighlighted();
+            }
+            lineRenderer.SetPosition(1, transform.position + transform.forward * 100);
+        }
+    }
+
+   /* void OnCollisionEnter(Collision collisionInfo)
     {
         print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
         print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
@@ -41,6 +81,7 @@ public class Collides : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         print("Still colliding with trigger object " + other.name);
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -50,7 +91,7 @@ public class Collides : MonoBehaviour
         {
             other.gameObject.GetComponent<Clickable>().UnHighlighted();
         }
-    }
+    }*/
 
 
 }

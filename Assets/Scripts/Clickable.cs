@@ -5,10 +5,9 @@ using UnityEngine.XR.MagicLeap;
 
 public abstract class Clickable : MonoBehaviour
 {
-    protected MLInputController _controller;
-    protected bool pressed = false;
-    protected bool highlighted = false;
-   
+    private MLInputController _controller;
+    private bool pressed = false;
+    private bool highlighted = false;
     // Start is called before the first frame update
     protected void Start()
     {
@@ -41,16 +40,15 @@ public abstract class Clickable : MonoBehaviour
             pressed = false;
         }
     }
-  
 
     public virtual void Highlighted()
     {
-        //Debug.Log("Highlighted");
+        Debug.Log("Highlighted");
         highlighted = true;
     }
     public virtual void UnHighlighted()
     {
-        //Debug.Log("Unhighlighted");
+        Debug.Log("Unhighlighted");
         highlighted = false;
     }
 

@@ -5,6 +5,8 @@ using System.Collections;
 public class Collides : MonoBehaviour
 {
 
+    public GameObject cube;
+
     void OnCollisionEnter(Collision collisionInfo)
     {
         print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
@@ -22,6 +24,8 @@ public class Collides : MonoBehaviour
     {
         print(gameObject.name + " and " + collisionInfo.collider.name + " are still colliding");
         print(collisionInfo.GetContact(0).point);
+        cube.transform.position = collisionInfo.GetContact(0).point;
+
     }
 
     void OnCollisionExit(Collision collisionInfo)

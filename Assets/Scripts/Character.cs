@@ -19,19 +19,35 @@ public class Character : Clickable
     [SerializeField]
     private UIClickable moveButton;
 
+    [SerializeField]
+    private UIClickable attackButton;
+
     private PlayerManager myManager;
+
+    public bool friendly = true;
+
+    public enum characterState { move, attack, idle };
+
+    public characterState myState;
     
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        myState = characterState.idle;
         myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         highlight = transform.Find("Highlight").gameObject;//might be better to SerializeField these and drag n drop
-        options = transform.Find("Canvas").gameObject;
-        options.SetActive(false);
+        if (friendly)
+        {
+            options = transform.Find("Canvas").gameObject;
+            options.SetActive(false);
+            closeButton.clickHandler += DeselectClicked;
+            moveButton.clickHandler += MoveClicked;
+            attackButton.clickHandler += AttackClicked;
+        }
         highlight.SetActive(false);
         navAgent = gameObject.GetComponent<NavMeshAgent>();
-        closeButton.clickHandler += DeselectClicked;
+        
     }
 
     // Update is called once per frame
@@ -56,7 +72,10 @@ public class Character : Clickable
     protected override void OnClicked()
     {
         //Debug.Log("Character clicked on!");
-        Select(false);
+        if (friendly)
+            Select(false);
+        else
+            myManager.SetTargetedEnemy(this);
     }
 
     public void Select(bool fromMenu)
@@ -87,7 +106,31 @@ public class Character : Clickable
 
     public void MoveTo(Vector3 where)
     {
+        
+        
         navAgent.SetDestination(where);
+        Deselect(false);
+        myState = characterState.idle;
     }
 
+    private void MoveClicked()
+    {
+        myState = characterState.move;//maybe later on this can include a visual cursor showing up on the terrain indicating validity of move
+        options.SetActive(false);
+    }
+
+    private void AttackClicked()
+    {
+        myState = characterState.attack;
+        options.SetActive(false);
+    }
+
+    public void AttackEnemy(Character enemy)
+    {
+        //TODO: Ahmed + Uche
+        //can get the enemy's position: enemy.transform.position.  Our position = transform.position
+        Debug.Log("Attacking enemy!");
+        Deselect(false);
+        myState = characterState.idle;
+    }
 }

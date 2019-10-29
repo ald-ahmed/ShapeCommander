@@ -2,7 +2,7 @@
 
 
 USES = \
-	/Users/ahmedaldulaimy/Downloads/Unity-Project-Template-2019.2.3f1/Temp/StagingArea/assets \
+	D:\UnityWork\ShapeCommander\Temp/StagingArea\assets \
 
 
 ######### DO NOT EDIT ABOVE #########

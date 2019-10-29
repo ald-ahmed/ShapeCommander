@@ -4,50 +4,94 @@ using System.Collections;
 
 public class Collides : MonoBehaviour
 {
+    private LineRenderer lineRenderer;
+    private GameObject lastHit = null;
 
-    public GameObject cube;
-
-    void OnCollisionEnter(Collision collisionInfo)
+    private void Start()
     {
-        print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
-        print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
-        print("Their relative velocity is " + collisionInfo.relativeVelocity);
-
-        foreach (ContactPoint contact in collisionInfo.contacts)
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+    }
+    private void Update()
+    {
+        lineRenderer.SetPosition(0, transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
+            lineRenderer.SetPosition(1, hit.point);
+            if (lastHit != null)
+            {
+                if (!hit.collider.gameObject.Equals(lastHit))
+                {
+                    lastHit.GetComponent<Clickable>().UnHighlighted();
+                }
+            }
+
+
+            if (hit.collider.gameObject.GetComponent<Clickable>())
+            {
+                hit.collider.gameObject.GetComponent<Clickable>().Highlighted();
+
+                lastHit = hit.collider.gameObject;
+            }
+
         }
-
+        else
+        {
+            if (lastHit != null)
+            {
+                lastHit.GetComponent<Clickable>().UnHighlighted();
+            }
+            lineRenderer.SetPosition(1, transform.position + transform.forward * 100);
+        }
     }
 
-    void OnCollisionStay(Collision collisionInfo)
-    {
-        print(gameObject.name + " and " + collisionInfo.collider.name + " are still colliding");
-        print(collisionInfo.GetContact(0).point);
-        cube.transform.position = collisionInfo.GetContact(0).point;
+    /* void OnCollisionEnter(Collision collisionInfo)
+     {
+         print("Detected collision between " + gameObject.name + " and " + collisionInfo.collider.name);
+         print("There are " + collisionInfo.contacts.Length + " point(s) of contacts");
+         print("Their relative velocity is " + collisionInfo.relativeVelocity);
 
-    }
+         foreach (ContactPoint contact in collisionInfo.contacts)
+         {
+             Debug.DrawRay(contact.point, contact.normal, Color.white);
+         }
 
-    void OnCollisionExit(Collision collisionInfo)
-    {
-        print(gameObject.name + " and " + collisionInfo.collider.name + " are no longer colliding");
-    }
+     }
+
+     void OnCollisionStay(Collision collisionInfo)
+     {
+         print(gameObject.name + " and " + collisionInfo.collider.name + " are still colliding");
+     }
+
+     void OnCollisionExit(Collision collisionInfo)
+     {
+         print(gameObject.name + " and " + collisionInfo.collider.name + " are no longer colliding");
+     }
 
 
-    void OnTriggerEnter(Collider other)
-    {
-        print("Collision detected with trigger object " + other.name);
-    }
+     void OnTriggerEnter(Collider other)
+     {
+         print("Collision detected with trigger object " + other.name);
+         if (other.gameObject.GetComponent<Clickable>())
+         {
+             other.gameObject.GetComponent<Clickable>().Highlighted();
+         }
+     }
 
-    void OnTriggerStay(Collider other)
-    {
-        print("Still colliding with trigger object " + other.name);
-    }
+     void OnTriggerStay(Collider other)
+     {
+         print("Still colliding with trigger object " + other.name);
 
-    void OnTriggerExit(Collider other)
-    {
-        print(gameObject.name + " and trigger object " + other.name + " are no longer colliding");
-    }
+     }
+
+     void OnTriggerExit(Collider other)
+     {
+         print(gameObject.name + " and trigger object " + other.name + " are no longer colliding");
+         if (other.gameObject.GetComponent<Clickable>())
+         {
+             other.gameObject.GetComponent<Clickable>().UnHighlighted();
+         }
+     }*/
 
 
 }

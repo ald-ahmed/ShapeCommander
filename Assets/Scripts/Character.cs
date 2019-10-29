@@ -132,8 +132,8 @@ public class Character : Clickable
         //TODO: Ahmed + Uche
         //can get the enemy's position: enemy.transform.position.  Our position = transform.position
 
-        float step = attackOrbSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
+        //float step = attackOrbSpeed * Time.deltaTime;
+        //transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
 
         Debug.Log("Attacking enemy!");
         Deselect(false);

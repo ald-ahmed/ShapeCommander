@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class Character : Clickable
 {
+
+
+    public GameObject attackOrb;
+
     private GameObject highlight;
 
     private GameObject options;
@@ -30,7 +34,6 @@ public class Character : Clickable
 
     public characterState myState;
 
-    public float attackOrbSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +52,7 @@ public class Character : Clickable
         }
         highlight.SetActive(false);
         navAgent = gameObject.GetComponent<NavMeshAgent>();
-        
+
     }
 
     // Update is called once per frame
@@ -108,8 +111,6 @@ public class Character : Clickable
 
     public void MoveTo(Vector3 where)
     {
-        
-        
         navAgent.SetDestination(where);
         Deselect(false);
         myState = characterState.idle;
@@ -132,8 +133,21 @@ public class Character : Clickable
         //TODO: Ahmed + Uche
         //can get the enemy's position: enemy.transform.position.  Our position = transform.position
 
-        //float step = attackOrbSpeed * Time.deltaTime;
-        //transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
+        float step = (float)(0.5 * Time.deltaTime);
+        attackOrb.transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
+
+        if (attackOrb.transform.position == enemy.transform.position) {
+            attackOrb.GetComponent<Renderer>().enabled = false;
+            attackOrb.GetComponent<ParticleSystem>().enableEmission = false;
+        }
+        else
+        {
+
+            attackOrb.GetComponent<Renderer>().enabled = true;
+            attackOrb.GetComponent<ParticleSystem>().enableEmission = true;
+
+        }
+
 
         Debug.Log("Attacking enemy!");
         Deselect(false);

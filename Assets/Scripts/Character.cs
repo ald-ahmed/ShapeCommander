@@ -34,11 +34,16 @@ public class Character : Clickable
 
     public characterState myState;
 
+    AnimationController animator;
+
+    bool isMoving = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
+        animator = GetComponentInChildren<AnimationController>();
         myState = characterState.idle;
         myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         highlight = transform.Find("Highlight").gameObject;//might be better to SerializeField these and drag n drop
@@ -52,13 +57,20 @@ public class Character : Clickable
         }
         highlight.SetActive(false);
         navAgent = gameObject.GetComponent<NavMeshAgent>();
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         base.Update();
+        if (navAgent.remainingDistance==0&&isMoving)
+        {
+            Debug.Log("STOP");
+            animator.AnimateIdle();
+            isMoving = false;
+        }
+        
     }
 
     public override void Highlighted()
@@ -111,7 +123,9 @@ public class Character : Clickable
 
     public void MoveTo(Vector3 where)
     {
+        isMoving = true;
         navAgent.SetDestination(where);
+        animator.AnimateMove();
         Deselect(false);
         myState = characterState.idle;
     }
@@ -133,20 +147,24 @@ public class Character : Clickable
         //TODO: Ahmed + Uche
         //can get the enemy's position: enemy.transform.position.  Our position = transform.position
 
-        float step = (float)(0.5 * Time.deltaTime);
-        attackOrb.transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
-
-        if (attackOrb.transform.position == enemy.transform.position) {
+        // float step = (float)(0.5 * Time.deltaTime);
+        //attackOrb.transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
+        attackOrb.transform.position = transform.position;
+        if (Vector3.Distance(attackOrb.transform.position,enemy.transform.position)<1) {
             attackOrb.GetComponent<Renderer>().enabled = false;
             attackOrb.GetComponent<ParticleSystem>().enableEmission = false;
+            attackOrb.transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = false;
+            
         }
         else
         {
-
+            attackOrb.transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = true;
             attackOrb.GetComponent<Renderer>().enabled = true;
             attackOrb.GetComponent<ParticleSystem>().enableEmission = true;
 
         }
+
+        attackOrb.GetComponent<attack>().SetTarget(enemy.transform);
 
 
         Debug.Log("Attacking enemy!");

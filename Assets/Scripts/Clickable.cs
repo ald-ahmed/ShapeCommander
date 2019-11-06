@@ -36,7 +36,7 @@ public abstract class Clickable : MonoBehaviour
                 OnClicked();
             
         }
-        else
+        else if(_controller.TriggerValue==0.0f)
         {
             pressed = false;
         }

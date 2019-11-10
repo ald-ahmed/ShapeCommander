@@ -1,0 +1,11 @@
+<manifest xmlns:ml="magicleap" ml:developer_id="0477be96-c13b-4359-8f2d-968558cdfd60" ml:package="com.magicleap.dodge" ml:version_code="1" ml:version_name="">
+  <application ml:min_api_level="4" ml:sdk_version="1.0" ml:visible_name="Dodge">
+    <uses-privilege ml:name="GesturesSubscribe" />
+    <uses-privilege ml:name="GesturesConfig" />
+    <uses-privilege ml:name="WorldReconstruction" />
+    <component ml:binary_name="bin/Player.elf" ml:name=".fullscreen" ml:type="Fullscreen" ml:visible_name="Dodge">
+      <icon ml:model_folder="Icon/Model" ml:portal_folder="Icon/Portal" />
+    </component>
+    <uses-privilege ml:name="LowLatencyLightwear" />
+  </application>
+</manifest>

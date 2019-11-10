@@ -1,0 +1,381 @@
+{
+ "entries": [
+  {
+   "compression": 8,
+   "hash": "5925de9f4d7b83c65d1fd7b25ced5f0bf8c27e73",
+   "pkgpath": "bin/libc++_shared.so",
+   "size": 976832,
+   "src": "/Users/Ngrabar/MagicLeap/mlsdk/v0.22.0/lumin/stl/libc++/lib/libc++_shared.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "1d568c6118ec2bb321b3c276234c979c0d5a4fea",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/libc++_shared.so-cfa114c4985b1db1",
+   "xfrm_size": 977590
+  },
+  {
+   "compression": 8,
+   "hash": "c1d023a1b098b72b30fa227927d0b0caea4be1e4",
+   "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
+   "size": 2847196,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "133de0e67023195bf1d332acec29d8b9eda805c2",
+   "pkgpath": "bin/libil2cpp.so",
+   "size": 45713496,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Native/libil2cpp.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "7130be9445da16034ef55475c2fd960592e294cc",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/libil2cpp.so-88d4af80c383d387",
+   "xfrm_size": 45714254
+  },
+  {
+   "compression": 8,
+   "hash": "5c856b80371bde9129f380cae53db7830d7c5138",
+   "pkgpath": "Data/Plugins/AudioPluginMSASpatializer.bundle",
+   "size": 257780,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.bundle"
+  },
+  {
+   "compression": 8,
+   "hash": "6b3b1067e8eeb28457c572292a209cc931e93089",
+   "pkgpath": "bin/AudioPluginMSASpatializer.so",
+   "size": 269360,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/AudioPluginMSASpatializer.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "fa0e509c88b3cecd9724370787329dd621f88b2a",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/AudioPluginMSASpatializer.so-303d16de0ad3fa32",
+   "xfrm_size": 270118
+  },
+  {
+   "compression": 8,
+   "hash": "669fadf60b08b4d27a1b8bba01f4580d50c85dd6",
+   "pkgpath": "Data/Plugins/DecoderContext.cpp",
+   "size": 21170,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/DecoderContext.cpp"
+  },
+  {
+   "compression": 8,
+   "hash": "afa9e38dd968be0ecf4fcce342fd2c6df7d2bfa4",
+   "pkgpath": "Data/Plugins/DecoderContext.h",
+   "size": 1605,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/DecoderContext.h"
+  },
+  {
+   "compression": 8,
+   "hash": "296556613664be01c2ab91dc926616cc5c791df0",
+   "pkgpath": "Data/Plugins/ExampleMusicProvider.cpp",
+   "size": 30927,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/ExampleMusicProvider.cpp"
+  },
+  {
+   "compression": 8,
+   "hash": "4521cb4bafc43b419ecbad8973025a7775ba830b",
+   "pkgpath": "bin/LuminMediaPlayer.dll",
+   "size": 71680,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/LuminMediaPlayer.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "5ff93eecf4292138b9f7e4ce45265a06b849e791",
+   "pkgpath": "bin/LuminUnity.dll",
+   "size": 306688,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/LuminUnity.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "2b84960e69feef2581c620537c74686d537bfdef",
+   "pkgpath": "bin/MSA.Runtime.dll",
+   "size": 19968,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/MSA.Runtime.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "bcb39c02693d08c30c015f895e5d626af7bb5947",
+   "pkgpath": "Data/Plugins/MusicProviderContext.h",
+   "size": 1569,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/MusicProviderContext.h"
+  },
+  {
+   "compression": 8,
+   "hash": "372956f00de267d07e4b6d53edcb1546c31e2d92",
+   "pkgpath": "bin/UnityMagicLeap.so",
+   "size": 1483656,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/UnityMagicLeap.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "fe4583460973964ce8d5ce6a2edde33899256638",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/UnityMagicLeap.so-303d16de0ad3fa32",
+   "xfrm_size": 1484414
+  },
+  {
+   "compression": 8,
+   "hash": "cf2a9409666397dfacb689ec38aa6bcb1aba178a",
+   "pkgpath": "Data/Plugins/Utility.cpp",
+   "size": 5496,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/Utility.cpp"
+  },
+  {
+   "compression": 8,
+   "hash": "bd0869f5a619c6f69b16ca15ddcdee09b2066eb7",
+   "pkgpath": "Data/Plugins/Utility.h",
+   "size": 476,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/Utility.h"
+  },
+  {
+   "compression": 8,
+   "hash": "e36553e9a3113280d39db515a350a0036cda878d",
+   "pkgpath": "bin/libml_camera_plugin.so",
+   "size": 14184,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/libml_camera_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "904f7f2dbc707051ba644ec7066a8981e1eeb0e0",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/libml_camera_plugin.so-303d16de0ad3fa32",
+   "xfrm_size": 14942
+  },
+  {
+   "compression": 8,
+   "hash": "0ee8bd5ed3f83c8d11c84a597fb375ec525b0642",
+   "pkgpath": "bin/libml_mediaplayer_plugin.so",
+   "size": 67624,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/libml_mediaplayer_plugin.so",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "270f952324303471aa72a9e5eb444ce65c728bfc",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/libml_mediaplayer_plugin.so-303d16de0ad3fa32",
+   "xfrm_size": 68382
+  },
+  {
+   "compression": 8,
+   "hash": "984e4d2049ed5491b970ba15d1e8c8cadac0896e",
+   "pkgpath": "bin/nunit.framework.dll",
+   "size": 339968,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Plugins/nunit.framework.dll"
+  },
+  {
+   "compression": 8,
+   "hash": "e6124da6073b916e29e013cf3ae3f58a4c5fdb0e",
+   "pkgpath": "Data/Resources/mscorlib.dll-resources.dat",
+   "size": 337563,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Resources/mscorlib.dll-resources.dat"
+  },
+  {
+   "compression": 8,
+   "hash": "fa10859a933989c5961257c02d9f4fcf042044f1",
+   "pkgpath": "Data/Resources/unity default resources",
+   "size": 3689324,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Resources/unity default resources"
+  },
+  {
+   "compression": 8,
+   "hash": "c4db3d155ed2e4491e35c3cbfed61190c430dd67",
+   "pkgpath": "Data/Resources/unity_builtin_extra",
+   "size": 782524,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/Resources/unity_builtin_extra"
+  },
+  {
+   "compression": 8,
+   "hash": "07a1a6072f5e1bb3a3f4905632232dc66e76c2d5",
+   "pkgpath": "Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json",
+   "size": 168,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/UnitySubsystems/UnityMagicLeap/UnitySubsystemsManifest.json"
+  },
+  {
+   "compression": 8,
+   "hash": "9f9d9fdfae69214ea57a2416e60a9fe924367caa",
+   "pkgpath": "Data/boot.config",
+   "size": 144,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/boot.config"
+  },
+  {
+   "compression": 8,
+   "hash": "1e0702a1e76a917b89ceb000bdb4ef8d5f5f65cd",
+   "pkgpath": "Data/globalgamemanagers",
+   "size": 40920,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/globalgamemanagers"
+  },
+  {
+   "compression": 8,
+   "hash": "ef87ad08dad135df1a0a6de3bfa2649a86d15ba4",
+   "pkgpath": "Data/globalgamemanagers.assets",
+   "size": 46856,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/globalgamemanagers.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "fb6b415200242d814bb6cae7dd1707a2efd7831d",
+   "pkgpath": "Data/level0",
+   "size": 56972,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/level0"
+  },
+  {
+   "compression": 8,
+   "hash": "0de8914635023de9ac8eb98f9c7731ffd3be8745",
+   "pkgpath": "Data/resources.assets",
+   "size": 4124,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/resources.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "76c0f09eaeff4a82fbde6be89c6c1041b178597b",
+   "pkgpath": "Data/sharedassets0.assets",
+   "size": 3377140,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/sharedassets0.assets"
+  },
+  {
+   "compression": 8,
+   "hash": "7a822c79b38f7857132ed2cbf039c4ae263bcda4",
+   "pkgpath": "Data/sharedassets0.assets.resS",
+   "size": 10359104,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/sharedassets0.assets.resS"
+  },
+  {
+   "compression": 8,
+   "hash": "54812307b4c627cbcc11487db58212ffaaba9184",
+   "pkgpath": "Data/sharedassets0.resource",
+   "size": 1870144,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Data/sharedassets0.resource"
+  },
+  {
+   "compression": 8,
+   "hash": "c6a75f75173b67d2554f00872501f780101ace8b",
+   "pkgpath": "Icon/Model/RESTRICTED-OutsidePortal_MagicKit.fbx",
+   "size": 1088880,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Model/RESTRICTED-OutsidePortal_MagicKit.fbx"
+  },
+  {
+   "compression": 8,
+   "hash": "77fdf6b3014ce9723e1b6c6141ca521a0bd68803",
+   "pkgpath": "Icon/Model/RESTRICTED-OutsidePortal_MagicKitLogo_Albedo.png",
+   "size": 23725,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Model/RESTRICTED-OutsidePortal_MagicKitLogo_Albedo.png"
+  },
+  {
+   "compression": 8,
+   "hash": "d5d72ffff9cf4f400ba01a7b0b83ad4c98d04159",
+   "pkgpath": "Icon/Model/RESTRICTED-com_magicleap_dodge_icon.kmat",
+   "size": 515,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Model/RESTRICTED-com_magicleap_dodge_icon.kmat"
+  },
+  {
+   "compression": 8,
+   "hash": "ee638fa9b2096f2978631e66d52addd2d605b238",
+   "pkgpath": "Icon/Portal/RESTRICTED-InsidePortal_SkySphere.fbx",
+   "size": 35792,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Portal/RESTRICTED-InsidePortal_SkySphere.fbx"
+  },
+  {
+   "compression": 8,
+   "hash": "e44f015b91bff65f36d0323ccb7f2a4b434b9699",
+   "pkgpath": "Icon/Portal/RESTRICTED-com_magicleap_dodge_portal.kmat",
+   "size": 471,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Portal/RESTRICTED-com_magicleap_dodge_portal.kmat"
+  },
+  {
+   "compression": 8,
+   "hash": "c98851814fc53bb91d1a206c3979a0bcd272c039",
+   "pkgpath": "Icon/Portal/RESTRICTED-gradient1.png",
+   "size": 2008,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Icon/Portal/RESTRICTED-gradient1.png"
+  },
+  {
+   "compression": 8,
+   "hash": "1d0b867cf3a8813ca25dca125b079fc066fc9a63",
+   "pkgpath": "bin/Player.elf",
+   "size": 20710840,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/Player.elf",
+   "xfrm_flags": {
+    "signed": {
+     "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+    },
+    "taildata": {
+     "debuggable": true,
+     "sbox": "USER",
+     "version": 3
+    }
+   },
+   "xfrm_hash": "d16fd422036a52515c885a2fd3f7afeda26c45c9",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/Player.elf-1237f19d125c54e5",
+   "xfrm_size": 20711598
+  },
+  {
+   "compression": 8,
+   "hash": "b4e8334d980cfe863ba2e4d924d9e13d899d2b25",
+   "pkgpath": "manifest.xml",
+   "size": 1098,
+   "src": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/Temp/StagingArea/manifest.xml",
+   "xfrm_flags": {
+    "manifest": {
+     "cert_hash": "71fac325eb6e8d1eaee3d320ee87622014769104",
+     "developer_id": "0477be96-c13b-4359-8f2d-968558cdfd60"
+    }
+   },
+   "xfrm_hash": "ff1dec2818157c8f28561a3b200cc9c3916f352a",
+   "xfrm_path": "/Users/Ngrabar/Unity/Magic_Leap/Dodge/.out/.cache/debug_lumin_clang-3.8_aarch64/com.magicleap.dodge-a0ad86427e0597ae/manifest.xml-1237f19d125c54e5",
+   "xfrm_size": 681
+  }
+ ],
+ "pkgflags": {
+  "signed": {
+   "cert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert"
+  },
+  "taildata": {
+   "debuggable": true,
+   "devcert": "/Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert",
+   "sbox": "USER",
+   "version": 3
+  }
+ }
+}

@@ -17,7 +17,7 @@ public class CharacterGridMovement : MonoBehaviour
 
     //public float elevation = 0.05f;
 
-    
+
 
 
     // Start is called before the first frame update
@@ -30,8 +30,8 @@ public class CharacterGridMovement : MonoBehaviour
         //Starter Path
         CubeIndex nextCube;
         List<Tile> starterPath = new List<Tile>();
-        
-        nextCube = new CubeIndex(0,0,0);
+
+        nextCube = new CubeIndex(0, 0, 0);
         starterPath.Add(gameGrid.TileAt(nextCube));
 
 
@@ -53,23 +53,23 @@ public class CharacterGridMovement : MonoBehaviour
 
         nextCube = new CubeIndex(-1, 2, -1);
         starterPath.Add(gameGrid.TileAt(nextCube));
- 
 
-       /* nextCube = new CubeIndex(-2, 2, 0);
-        starterPath.Add(gameGrid.TileAt(nextCube));
-        if (gameGrid.TileAt(nextCube) != null)
-        {
-            Debug.Log("Not null in hereg");
-        }
 
-        nextCube = new CubeIndex(0, 0, 0);
-        starterPath.Add(gameGrid.TileAt(nextCube));
-        if (gameGrid.TileAt(nextCube) != null)
-        {
-            Debug.Log("Not null in hereh");
-        }*/
+        /* nextCube = new CubeIndex(-2, 2, 0);
+         starterPath.Add(gameGrid.TileAt(nextCube));
+         if (gameGrid.TileAt(nextCube) != null)
+         {
+             Debug.Log("Not null in hereg");
+         }
+
+         nextCube = new CubeIndex(0, 0, 0);
+         starterPath.Add(gameGrid.TileAt(nextCube));
+         if (gameGrid.TileAt(nextCube) != null)
+         {
+             Debug.Log("Not null in hereh");
+         }*/
         Debug.Log("starterPath.length: " + starterPath.Count);
-       // MoveTiles(starterPath);//for testing
+        // MoveTiles(starterPath);//for testing
     }
 
     public void AddToPath(Tile t)
@@ -84,7 +84,7 @@ public class CharacterGridMovement : MonoBehaviour
     void Update()
     {
         //Only triggers after MoveTiles is called
-        if(isMoving == true)
+        if (isMoving == true)
         {
             //Move along path with time
             float step = speed * Time.deltaTime;
@@ -96,45 +96,57 @@ public class CharacterGridMovement : MonoBehaviour
                 //Set next step for next destination
                 stepNum++;
                 //Rotate
-                transform.LookAt(path[stepNum]);
+                if (stepNum < path.Count)
+                    transform.LookAt(path[stepNum]);
+                else
+                {
+                    Debug.Log("Animate Idle");
+                    aController.AnimateIdle();
+                    //Turn off movement
+                    path.Clear();
+                    isMoving = false;
+                }
+                /*
                 //If it is the last step, end there.
                 if (stepNum >= path.Count-1)
                 {
                     //Turn off animation
-                    //aController.AnimateIdle();
+                    aController.AnimateIdle();
                     //Turn off movement
                     path.Clear();
                     isMoving = false;
                     //
                     
-                }
+                }*/
             }
-        }        
+        }
     }
     public void Navigate()
     {
         isMoving = true;
+        aController.AnimateMove();
+        transform.LookAt(path[stepNum]);
         Debug.Log("moving");
     }
 
     public void MoveTiles(List<Tile> movePath)
     {
-       
+
         //Read the path in as vectors
 
         //Turn on movement animation
         //animator.SetBool("move", true);
-        //aController.AnimateMove();
+        aController.AnimateMove();
 
         path = new List<Vector3>();
-        for(int ind = 0; ind < movePath.Count; ind++)
+        for (int ind = 0; ind < movePath.Count; ind++)
         {
             Vector3 tar = movePath[ind].transform.position;
             tar.y = tar.y + .1f;
             path.Add(tar);
         }
         isMoving = true; //Starts update function for position
-       
+
     }
 
 }

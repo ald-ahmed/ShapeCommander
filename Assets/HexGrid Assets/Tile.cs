@@ -11,10 +11,25 @@ public class Tile : MonoBehaviour {
         //move the line renderer to where the hex actually is 
         lines = GetComponent<LineRenderer>();
         rangeIndicator = transform.Find("range").GetComponent<LineRenderer>();
+        rangeIndicator.startWidth = 0.02f;
+        rangeIndicator.endWidth = 0.02f;
+        lines.startWidth = 0.04f;
+        lines.endWidth = 0.04f;
         for (int vert = 0; vert <= 6; vert++)
-            lines.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x,transform.position.y+1,transform.position.z), 1, vert, HexOrientation.Pointy));//1 = hexRadius, 
+            rangeIndicator.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x, transform.position.y , transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));
+        for (int vert = 0; vert <= 6; vert++)
+            lines.SetPosition(vert, Tile.Corner(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));//1 = hexRadius, 
         lines.enabled = false;
         //SetInRange(false);
+    }
+
+    //use this to make the lines move correctly
+    public void PositionUpdated()
+    {
+        for (int vert = 0; vert <= 6; vert++)
+            rangeIndicator.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x, transform.position.y, transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));
+        for (int vert = 0; vert <= 6; vert++)
+            lines.SetPosition(vert, Tile.Corner(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));//1 = hexRadius, 
     }
 
     public void SetInRange(bool inRange)//in range of attack or movement?  movement should be blue or green or something while attack is red
@@ -51,7 +66,7 @@ public class Tile : MonoBehaviour {
 		if(orientation == HexOrientation.Pointy)
 			angle += 30;
 		angle *= Mathf.PI / 180;
-		return new Vector3(origin.x + radius * Mathf.Cos(angle), 0.0f, origin.z + radius * Mathf.Sin(angle));
+		return new Vector3(origin.x + radius * Mathf.Cos(angle), origin.y, origin.z + radius * Mathf.Sin(angle));//origin.y was 0, chris changed because duh
 	}
 
 	public static void GetHexMesh(float radius, HexOrientation orientation, ref Mesh mesh) {

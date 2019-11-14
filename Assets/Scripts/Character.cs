@@ -56,7 +56,7 @@ public class Character : Clickable
             attackButton.clickHandler += AttackClicked;
         }
         highlight.SetActive(false);
-        navAgent = gameObject.GetComponent<NavMeshAgent>();
+        
         
     }
 
@@ -64,12 +64,12 @@ public class Character : Clickable
     void Update()
     {
         base.Update();
-        if (navAgent.remainingDistance==0&&isMoving)
+        /*if (navAgent.remainingDistance==0&&isMoving)
         {
             Debug.Log("STOP");
             animator.AnimateIdle();
             isMoving = false;
-        }
+        }*/
         
     }
 
@@ -123,9 +123,9 @@ public class Character : Clickable
 
     public void MoveTo(Vector3 where)
     {
-        isMoving = true;
+        /*isMoving = true;
         navAgent.SetDestination(where);
-        animator.AnimateMove();
+        animator.AnimateMove();*/
         Deselect(false);
         myState = characterState.idle;
     }

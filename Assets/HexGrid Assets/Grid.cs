@@ -160,7 +160,7 @@ public class Grid : MonoBehaviour {
 		if(!inst)
 			inst = this;
 
-		GenerateGrid();
+		//GenerateGrid();turned off by Chris
 	}
 
 	private void GetMesh() {
@@ -331,8 +331,8 @@ public class Grid : MonoBehaviour {
             lines.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
 			lines.receiveShadows = false;
 
-            lines.startWidth = 0.3f;
-            lines.endWidth = 0.3f;
+            lines.startWidth = 0.01f;
+            lines.endWidth = 0.01f;
             lines.startColor = Color.white;
             lines.endColor = Color.white;
 			lines.material = lineMaterial;
@@ -347,8 +347,8 @@ public class Grid : MonoBehaviour {
         rangeRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
         rangeRenderer.receiveShadows = false;
 
-        rangeRenderer.startWidth = 0.18f;
-        rangeRenderer.endWidth = 0.18f;
+        rangeRenderer.startWidth = 0.02f;
+        rangeRenderer.endWidth = 0.02f;
         rangeRenderer.startColor = Color.red;
         rangeRenderer.endColor = Color.red;
         rangeRenderer.material = lineMaterial;

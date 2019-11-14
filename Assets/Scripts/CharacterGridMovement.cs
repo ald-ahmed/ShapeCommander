@@ -96,24 +96,36 @@ public class CharacterGridMovement : MonoBehaviour
                 //Set next step for next destination
                 stepNum++;
                 //Rotate
-                transform.LookAt(path[stepNum]);
+                if(stepNum<path.Count)
+                    transform.LookAt(path[stepNum]);
+                else
+                {
+                    Debug.Log("Animate Idle");
+                    aController.AnimateIdle();
+                    //Turn off movement
+                    path.Clear();
+                    isMoving = false;
+                }
+                /*
                 //If it is the last step, end there.
                 if (stepNum >= path.Count-1)
                 {
                     //Turn off animation
-                    //aController.AnimateIdle();
+                    aController.AnimateIdle();
                     //Turn off movement
                     path.Clear();
                     isMoving = false;
                     //
                     
-                }
+                }*/
             }
         }        
     }
     public void Navigate()
     {
         isMoving = true;
+        aController.AnimateMove();
+        transform.LookAt(path[stepNum]);
         Debug.Log("moving");
     }
 
@@ -124,7 +136,7 @@ public class CharacterGridMovement : MonoBehaviour
 
         //Turn on movement animation
         //animator.SetBool("move", true);
-        //aController.AnimateMove();
+        aController.AnimateMove();
 
         path = new List<Vector3>();
         for(int ind = 0; ind < movePath.Count; ind++)

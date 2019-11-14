@@ -7,14 +7,18 @@ public class PlayerFace : MonoBehaviour
 {
     private Transform m_target;
     private bool m_canPlaceMap = false;
+    private MyControl m_placementControl;
 
     void Start()
     {
         m_target = GameObject.Find("Main Camera").transform;
+        m_placementControl = GetComponent<MyControl>();
+        
         if (GetComponent<NetworkIdentity>().isServer)
         {
             m_canPlaceMap = true;
             Debug.Log("I can place the map");
+            m_placementControl.allowPlacement = true;
         }
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {

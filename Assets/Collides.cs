@@ -23,6 +23,7 @@ public class Collides : MonoBehaviour
                 if (!hit.collider.gameObject.Equals(lastHit))
                 {
                     lastHit.GetComponent<Clickable>().UnHighlighted();
+                    lastHit = null;//attempted by Chris at midnight
                 }
             }
 
@@ -40,6 +41,7 @@ public class Collides : MonoBehaviour
             if (lastHit != null)
             {
                 lastHit.GetComponent<Clickable>().UnHighlighted();
+                lastHit = null;//attempted by Chris at midnight
             }
             lineRenderer.SetPosition(1, transform.position + transform.forward * 100);
         }

@@ -146,51 +146,6 @@ public class Grid : MonoBehaviour {
 		return TilesInRange(TileAt(x,z), range);
 	}
 
-    public List<Tile> TilesReachable(Tile center, int range)
-	{
-		List<Tile> visited = new List<Tile>(); // set of visited Tiles
-		visited.Add(center); //add start to visited
-
-		List <List<Tile>> fringes = new List<List<Tile>>();
-		fringes.Add(new List<Tile> { center });
-
-        for(int k=0; k<range;k++)
-		{
-			fringes.Add(new List<Tile> { });
-			int size = fringes[k - 1].Count;
-            for (int j=0;j<size;j++)
-			{
-				List<Tile> neighbors = Neighbours(fringes[k - 1][j]);
-                for(int dir=0;dir<6;dir++)
-				{
-                    if(!visited.Contains(neighbors[dir]) && !neighbors[dir].GetOccupied())
-					{
-						visited.Add(neighbors[dir]);
-					}
-                    
-				}
-			}
-		}
-
-		return visited;
-	}
-
-    public List<Tile> TilesReachable(CubeIndex index, int range)
-	{
-		return TilesReachable(TileAt(index), range);
-	}
-
-    public List<Tile> TilesReachable(int x, int y, int z, int range)
-	{
-		return TilesReachable(TileAt(x, y, z), range);
-	}
-
-	public List<Tile> TilesReachable(int x, int z, int range)
-	{
-		return TilesReachable(TileAt(x, z), range);
-	}
-
-
 	public int Distance(CubeIndex a, CubeIndex b){
 		return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z);
 	}
@@ -205,8 +160,19 @@ public class Grid : MonoBehaviour {
 		if(!inst)
 			inst = this;
 
-		GenerateGrid();
+        //GenerateGrid();//turned off by Chris
+        DetectExistingGrid();
 	}
+
+    private void DetectExistingGrid()
+    {
+        Tile[] tiles = GetComponentsInChildren<Tile>();
+        foreach(Tile tile in tiles)
+        {
+            grid.Add(tile.index.ToString(), tile);
+        }
+        
+    }
 
 	private void GetMesh() {
 		hexMesh = null;
@@ -376,10 +342,10 @@ public class Grid : MonoBehaviour {
             lines.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
 			lines.receiveShadows = false;
 
-            lines.startWidth = 0.18f;
-            lines.endWidth = 0.18f;
-            lines.startColor = Color.black;
-            lines.endColor = Color.black;
+            lines.startWidth = 0.01f;
+            lines.endWidth = 0.01f;
+            lines.startColor = Color.white;
+            lines.endColor = Color.white;
 			lines.material = lineMaterial;
 
 			lines.positionCount = 7;
@@ -392,10 +358,10 @@ public class Grid : MonoBehaviour {
         rangeRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
         rangeRenderer.receiveShadows = false;
 
-        rangeRenderer.startWidth = 0.18f;
-        rangeRenderer.endWidth = 0.18f;
-        rangeRenderer.startColor = Color.black;
-        rangeRenderer.endColor = Color.black;
+        rangeRenderer.startWidth = 0.02f;
+        rangeRenderer.endWidth = 0.02f;
+        rangeRenderer.startColor = Color.red;
+        rangeRenderer.endColor = Color.red;
         rangeRenderer.material = lineMaterial;
 
         rangeRenderer.positionCount = 7;

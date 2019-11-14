@@ -14,7 +14,7 @@ public class MenuTest : MonoBehaviour
 
     void Reaction()
     {
-        Debug.Log("CLICKED");
+        
     }
 
     // Update is called once per frame

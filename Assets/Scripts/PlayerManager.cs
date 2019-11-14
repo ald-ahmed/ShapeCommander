@@ -36,6 +36,11 @@ public class PlayerManager : MonoBehaviour
         
     }
 
+    public Character GetSelectedCharacter()
+    {
+        return selectedCharacter;
+    }
+
 
     public void SendSelectedCharacter(Vector3 where)
     {

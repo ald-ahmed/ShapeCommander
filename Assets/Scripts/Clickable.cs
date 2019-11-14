@@ -28,12 +28,15 @@ public abstract class Clickable : MonoBehaviour
     {
         if (_controller.TriggerValue > 0.2f && !pressed)
         {
-            
+            Debug.Log("Trigger registered");
             pressed = true;
 
             //if being touched by laser pointer at this point
-            if(highlighted)
+            if (highlighted)
+            {
+                Debug.Log("highlighted, clicking");
                 OnClicked();
+            }
             
         }
         else if(_controller.TriggerValue==0.0f)
@@ -46,12 +49,14 @@ public abstract class Clickable : MonoBehaviour
     public virtual void Highlighted()
     {
         //Debug.Log("Highlighted");
-        highlighted = true;
+        if(!highlighted)
+            highlighted = true;
     }
     public virtual void UnHighlighted()
     {
         //Debug.Log("Unhighlighted");
-        highlighted = false;
+        if(highlighted)
+            highlighted = false;
     }
 
     protected abstract void OnClicked();

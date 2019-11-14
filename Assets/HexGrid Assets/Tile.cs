@@ -5,30 +5,31 @@ public class Tile : MonoBehaviour {
 	public CubeIndex index;
     private LineRenderer lines;
     private LineRenderer rangeIndicator;
-	private bool occupied = false;
-
-    private enum OutlineState
-	{
-        DEFAULT,
-        MOUSEOVER,
-        SELECTED,
-        OCCUPIED,
-        MOVEMENT,
-        ATTACK,
-	}
-
-	private OutlineState OutlineInteract = OutlineState.DEFAULT;
-
     private void Start()
     {
 
         //move the line renderer to where the hex actually is 
         lines = GetComponent<LineRenderer>();
         rangeIndicator = transform.Find("range").GetComponent<LineRenderer>();
+        rangeIndicator.startWidth = 0.02f;
+        rangeIndicator.endWidth = 0.02f;
+        lines.startWidth = 0.04f;
+        lines.endWidth = 0.04f;
         for (int vert = 0; vert <= 6; vert++)
-            lines.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x,transform.position.y+1,transform.position.z), 1, vert, HexOrientation.Pointy));//1 = hexRadius, 
-        lines.enabled = true;
+            rangeIndicator.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x, transform.position.y , transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));
+        for (int vert = 0; vert <= 6; vert++)
+            lines.SetPosition(vert, Tile.Corner(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));//1 = hexRadius, 
+        lines.enabled = false;
         //SetInRange(false);
+    }
+
+    //use this to make the lines move correctly
+    public void PositionUpdated()
+    {
+        for (int vert = 0; vert <= 6; vert++)
+            rangeIndicator.SetPosition(vert, Tile.Corner(new Vector3(transform.position.x, transform.position.y, transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));
+        for (int vert = 0; vert <= 6; vert++)
+            lines.SetPosition(vert, Tile.Corner(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));//1 = hexRadius, 
     }
 
     public void SetInRange(bool inRange)//in range of attack or movement?  movement should be blue or green or something while attack is red
@@ -42,75 +43,30 @@ public class Tile : MonoBehaviour {
     }
 
     //TODO: this function should switch the range indicator between the attack color and the move color
-    public void SetColor()
+    public void SetRangeMode()
     {
-		switch (OutlineInteract)
-		{
-			case OutlineState.DEFAULT:
-				rangeIndicator.startColor = Color.black;
-				rangeIndicator.endColor = Color.black;
-				break;
-			case OutlineState.MOUSEOVER:
-				rangeIndicator.startColor = Color.blue;
-				rangeIndicator.endColor = Color.blue;
-				break;
-			case OutlineState.SELECTED:
-				rangeIndicator.startColor = Color.blue;
-				rangeIndicator.endColor = Color.blue;
-				break;
-			case OutlineState.OCCUPIED:
-				rangeIndicator.startColor = Color.yellow;
-				rangeIndicator.endColor = Color.yellow;
-				break;
-			case OutlineState.MOVEMENT:
-				rangeIndicator.startColor = Color.green;
-				rangeIndicator.endColor = Color.green;
-				break;
-			case OutlineState.ATTACK:
-				rangeIndicator.startColor = Color.red;
-				rangeIndicator.endColor = Color.red;
-				break;
-		}
+        //if attack
+        rangeIndicator.startColor = Color.red;
+        rangeIndicator.endColor = Color.red;
+        //else set to blue
     }
     
-    public void Highlight() // Specifically for "mouseover"
+    public void Highlight()
     {
-		OutlineInteract = OutlineState.MOUSEOVER;
-		SetColor();
-        //lines.enabled = true;//turns on the thick white selection highlight
+        
+        lines.enabled = true;//turns on the thick white selection highlight
     }
-    public void UnHighlight() // specifically for "mouseover"
+    public void UnHighlight()
     {
-		OutlineInteract = OutlineState.DEFAULT;
-		SetColor();
-        //lines.enabled = false;
+        lines.enabled = false;
     }
-
-
-    public bool GetOccupied()
-	{
-		return occupied;
-	}
-
-    public void SetOccupied()
-	{
-		OutlineInteract = OutlineState.OCCUPIED;
-		occupied = true;
-	}
-    public void SetUnoccupied()
-	{
-		OutlineInteract = OutlineState.DEFAULT;
-		occupied = false;
-	}
-
-
 
     public static Vector3 Corner(Vector3 origin, float radius, int corner, HexOrientation orientation){
 		float angle = 60 * corner;
 		if(orientation == HexOrientation.Pointy)
 			angle += 30;
 		angle *= Mathf.PI / 180;
-		return new Vector3(origin.x + radius * Mathf.Cos(angle), 0.0f, origin.z + radius * Mathf.Sin(angle));
+		return new Vector3(origin.x + radius * Mathf.Cos(angle), origin.y, origin.z + radius * Mathf.Sin(angle));//origin.y was 0, chris changed because duh
 	}
 
 	public static void GetHexMesh(float radius, HexOrientation orientation, ref Mesh mesh) {

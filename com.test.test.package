@@ -2,7 +2,7 @@
 
 
 USES = \
-	/Users/Ngrabar/Downloads/ShapeCommander-master/Temp/StagingArea/assets \
+	D:\UnityWork\ShapeCommander\Temp/StagingArea\assets \
 
 
 ######### DO NOT EDIT ABOVE #########

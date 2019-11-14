@@ -16,6 +16,7 @@ public class FaceCamera : MonoBehaviour
     void Update()
     {
         transform.LookAt(target);
+
     }
 
 }

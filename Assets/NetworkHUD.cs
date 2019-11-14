@@ -32,7 +32,7 @@ public class NetworkHUD : MonoBehaviour
         //m_networkManager.networkAddress= "10.26.101.236";
         m_networkManager.StartHost();
         Debug.Log("Starting hosting on "+m_networkManager.networkAddress);
-        
+        GameObject.Find("NetworkingPanel").SetActive(false);
     }
 
     public void StartConnecting()
@@ -40,6 +40,7 @@ public class NetworkHUD : MonoBehaviour
         
         m_networkManager.StartClient();
         Debug.Log("Starting connecting to "+m_networkManager.networkAddress);
+        GameObject.Find("NetworkingPanel").SetActive(false);
     }
 
 

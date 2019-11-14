@@ -35,7 +35,7 @@ public class MyControl : MonoBehaviour {
                 Vector3 origin = new Vector3(_camera.transform.position.x, _camera.transform.position.y, _camera.transform.position.z);
                 _cube.transform.position = origin + _camera.transform.forward * _distance;
                 //_cube.transform.rotation = _camera.transform.rotation;
-                persistentBehavior.UpdateBinding();
+                //persistentBehavior.UpdateBinding();
             }
             else if (hasClicked)
             {

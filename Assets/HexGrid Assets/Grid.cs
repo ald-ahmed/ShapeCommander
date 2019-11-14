@@ -160,8 +160,19 @@ public class Grid : MonoBehaviour {
 		if(!inst)
 			inst = this;
 
-		//GenerateGrid();turned off by Chris
+        //GenerateGrid();//turned off by Chris
+        DetectExistingGrid();
 	}
+
+    private void DetectExistingGrid()
+    {
+        Tile[] tiles = GetComponentsInChildren<Tile>();
+        foreach(Tile tile in tiles)
+        {
+            grid.Add(tile.index.ToString(), tile);
+        }
+        
+    }
 
 	private void GetMesh() {
 		hexMesh = null;

@@ -130,6 +130,12 @@ public class Character : Clickable
         myState = characterState.idle;
     }
 
+    public void StartMoving()
+    {
+        Deselect(false);
+        myState = characterState.idle;
+    }
+
     private void MoveClicked()
     {
         myState = characterState.move;//maybe later on this can include a visual cursor showing up on the terrain indicating validity of move

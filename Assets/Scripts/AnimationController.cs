@@ -12,6 +12,7 @@ public class AnimationController : MonoBehaviour
     private const string DEATH_ANIMATION_BOOL = "die";
     private const string ATTACK_ANIMATION_BOOL = "attack";
     private const string MOVE_ANIMATION_BOOL = "move";
+    private const string HIT_ANIMATION_BOOL = "hit";
 
     #endregion
 
@@ -44,6 +45,11 @@ public class AnimationController : MonoBehaviour
     public void AnimateMove()
     {
         Animate(MOVE_ANIMATION_BOOL);
+    }
+
+    public void AnimateHit()
+    {
+        Animate(HIT_ANIMATION_BOOL);
     }
 
     #endregion

@@ -146,6 +146,78 @@ public class Grid : MonoBehaviour {
 		return TilesInRange(TileAt(x,z), range);
 	}
 
+    public (List<Tile>, List<Tile>) TilesReachable(Tile center, int range)
+	{
+        bool backward = false;
+        List<Tile> reachable = new List<Tile>(); // set of reachable Tiles
+        List<Tile> backPointer = new List<Tile>(); // set of backpointer Tiles for pathfinding
+        reachable.Add(center); //add start to visited
+        backPointer.Add(center); //center points to itself (terminal indicator)
+        
+        List <List<Tile>> depth = new List<List<Tile>>(); // tiles at increasing depth from center
+		depth.Add(new List<Tile> { center }); // add center as depth = 0
+        
+        for (int k=1; k<=range;k++) // loop through allowed range
+		{
+            depth.Add(new List<Tile> { }); // empty list for current depth
+            
+            int size = depth[k - 1].Count;
+
+            if (size == 0)
+            {
+                //break; // prior depth found no reachable Tiles
+            }
+            for (int j=0;j<size;j++) // loop through depth-1 to take one step from each tile
+			{
+                List<Tile> neighbors = Neighbours(depth[k - 1][j]); // collect neighbors of tile
+                for(int dir=0;dir<neighbors.Count;dir++)
+				{
+
+                    //foreach (Tile seenTile in reachable)
+                    //{
+                    //    if (seenTile.Equals(neighbors[dir]))
+                    //    {
+                    //        backward = true;
+                    //    } else
+                    //    {
+                    //        backward = false;
+                    //    }
+                    //    //backward |= seenTile.Equals(neighbors[dir]); // checks if Tile already in visited
+                    //}
+
+                    backward = reachable.Contains(neighbors[dir]);
+                    
+                    if (!backward && !neighbors[dir].GetOccupied()) // if tile wasn't already visited or isn't occupied
+					{
+                        depth[k].Add(neighbors[dir]); // adds Tile to next depth level
+                        reachable.Add(neighbors[dir]); // adds Tile to reachable
+                        backPointer.Add(depth[k - 1][j]); // adds backpointer Tile to previous Tile 
+					}
+                    
+				}
+			}
+
+
+        }
+
+        return (reachable,backPointer);
+	}
+
+    public (List<Tile>, List<Tile>) TilesReachable(CubeIndex index, int range)
+	{
+		return TilesReachable(TileAt(index), range);
+	}
+
+    public (List<Tile>, List<Tile>) TilesReachable(int x, int y, int z, int range)
+	{
+		return TilesReachable(TileAt(x, y, z), range);
+	}
+
+	public (List<Tile>, List<Tile>) TilesReachable(int x, int z, int range)
+	{
+		return TilesReachable(TileAt(x, z), range);
+	}
+
 	public int Distance(CubeIndex a, CubeIndex b){
 		return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y) + Mathf.Abs(a.z - b.z);
 	}
@@ -153,28 +225,73 @@ public class Grid : MonoBehaviour {
 	public int Distance(Tile a, Tile b){
 		return Distance(a.index, b.index);
 	}
-	#endregion
 
-	#region Private Methods
-	private void Awake() {
-		if(!inst)
-			inst = this;
+    public (bool, List<Tile>) MovePath(Tile start, Tile end, int range)
+	{
+        List<Tile> optimalPath = new List<Tile>();
+        Tile nextTile = new Tile(); // Do I need to write constructor?
+        int backpointer = -1;
 
-        //GenerateGrid();//turned off by Chris
-        DetectExistingGrid();
+        (List<Tile> reachableTiles, List<Tile> backTiles) = TilesReachable(start, range);
+
+        for (int i=0; i<reachableTiles.Count; i++)
+        {
+            if (end.Equals(reachableTiles[i])) // Tile can be reached in range
+            {
+                optimalPath.Add(end); // adds terminal Tile to path
+                backpointer = i; // sets first backpointer value
+            }
+        }
+
+        if (reachableTiles.Count == 0)
+        {
+            return (false, optimalPath); // Tile not in range 
+        }
+
+        while (backpointer != 0) // terminates at starting Tile
+        {
+            nextTile = backTiles[backpointer]; // next Tile backwards on Path
+            optimalPath.Insert(0, nextTile);
+            for (int i = 0; i < reachableTiles.Count; i++)
+            {
+                if (nextTile.Equals(reachableTiles[i])) // next Tile on Path
+                {
+                    backpointer = i; // sets new backpointer value
+                }
+            }
+        }
+
+        return (true,optimalPath);
 	}
+
+    public (bool, List<Tile>) MovePath(CubeIndex start, CubeIndex end, int range)
+    {
+        return MovePath(TileAt(start), TileAt(end), range);
+    }
+
+
+    #endregion
+
+    #region Private Methods
+    private void Awake() {
+        if (!inst)
+            inst = this;
+
+        //GenerateGrid();
+        DetectExistingGrid();
+    }
 
     private void DetectExistingGrid()
     {
         Tile[] tiles = GetComponentsInChildren<Tile>();
-        foreach(Tile tile in tiles)
+        foreach (Tile tile in tiles)
         {
             grid.Add(tile.index.ToString(), tile);
         }
-        
+
     }
 
-	private void GetMesh() {
+    private void GetMesh() {
 		hexMesh = null;
 		Tile.GetHexMesh(hexRadius, hexOrientation, ref hexMesh);
 	}
@@ -342,10 +459,10 @@ public class Grid : MonoBehaviour {
             lines.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
 			lines.receiveShadows = false;
 
-            lines.startWidth = 0.01f;
-            lines.endWidth = 0.01f;
-            lines.startColor = Color.white;
-            lines.endColor = Color.white;
+            lines.startWidth = 0.18f;
+            lines.endWidth = 0.18f;
+            lines.startColor = Color.black;
+            lines.endColor = Color.black;
 			lines.material = lineMaterial;
 
 			lines.positionCount = 7;
@@ -358,10 +475,10 @@ public class Grid : MonoBehaviour {
         rangeRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
         rangeRenderer.receiveShadows = false;
 
-        rangeRenderer.startWidth = 0.02f;
-        rangeRenderer.endWidth = 0.02f;
-        rangeRenderer.startColor = Color.red;
-        rangeRenderer.endColor = Color.red;
+        rangeRenderer.startWidth = 0.18f;
+        rangeRenderer.endWidth = 0.18f;
+        rangeRenderer.startColor = Color.black;
+        rangeRenderer.endColor = Color.black;
         rangeRenderer.material = lineMaterial;
 
         rangeRenderer.positionCount = 7;

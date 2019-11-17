@@ -17,9 +17,9 @@ public class ClickableHex : Clickable
         else if (myManager.GetSelectedCharacter().myState == Character.characterState.move)
         {
             Debug.Log("selected character should move");
-            myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().AddToPath(m_myTile);
-            myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().Navigate();
-            myManager.GetSelectedCharacter().StartMoving();
+            //myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().AddToPath(m_myTile);
+            //myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().Navigate();
+            //myManager.GetSelectedCharacter().StartMoving();
         }
     }
 

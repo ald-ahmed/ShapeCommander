@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 8351643500442697097}
   - component: {fileID: 8351643500442697093}
   - component: {fileID: 8351643500442697090}
-  - component: {fileID: 8351643500442697091}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Sorceress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,28 +132,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!195 &8351643500442697091
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8351643500442697096}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 0.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 186.51
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8351643500456346771
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,11 +517,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8351643500442697092}
     m_Modifications:
-    - target: {fileID: 7534897955027717801, guid: 4764a99b028be2c45b460fafe683d798,
-        type: 3}
-      propertyPath: m_Name
-      value: Sorcerer
-      objectReference: {fileID: 0}
     - target: {fileID: 6830285100662947002, guid: 4764a99b028be2c45b460fafe683d798,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -599,6 +571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7534897955027717801, guid: 4764a99b028be2c45b460fafe683d798,
+        type: 3}
+      propertyPath: m_Name
+      value: Sorcerer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4764a99b028be2c45b460fafe683d798, type: 3}

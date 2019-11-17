@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8351643500442697092}
   - component: {fileID: 8351643500442697095}
   - component: {fileID: 8351643500442697094}
+  - component: {fileID: 2487908990540533339}
   - component: {fileID: 8351643500442697097}
   - component: {fileID: 8351643500442697093}
   - component: {fileID: 8351643500442697090}
@@ -85,6 +86,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2487908990540533339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8351643500442697096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23fcc68a33351464aade18d6fcb3cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aController: {fileID: 729913266945644727}
+  gameGrid: {fileID: 0}
+  isMoving: 0
+  speed: 0.2
 --- !u!136 &8351643500442697097
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -111,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a4eaa7de93bed44a1a1ef4f8583883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterType: Knight
   attackOrb: {fileID: 0}
   closeButton: {fileID: 3458407083915706263}
   moveButton: {fileID: 3458407083602894800}
@@ -540,11 +558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8351643500442697092}
     m_Modifications:
-    - target: {fileID: 2761392926430799163, guid: a50fe06d725f1e14ba1a81713d720397,
-        type: 3}
-      propertyPath: m_Name
-      value: Paladin
-      objectReference: {fileID: 0}
     - target: {fileID: 1155500841289504552, guid: a50fe06d725f1e14ba1a81713d720397,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,6 +613,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2761392926430799163, guid: a50fe06d725f1e14ba1a81713d720397,
+        type: 3}
+      propertyPath: m_Name
+      value: Paladin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a50fe06d725f1e14ba1a81713d720397, type: 3}
 --- !u!4 &5718332313817478063 stripped
@@ -608,6 +626,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6868747089170637959}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &729913266945644727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6157437919782009904, guid: a50fe06d725f1e14ba1a81713d720397,
+    type: 3}
+  m_PrefabInstance: {fileID: 6868747089170637959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2b5690d265f0b4ab633c42e80b5792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8351643500922544775
 PrefabInstance:
   m_ObjectHideFlags: 0

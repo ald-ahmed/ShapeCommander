@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Character : Clickable
 {
-
+    public string characterType;
 
     public GameObject attackOrb;
 
@@ -34,7 +34,7 @@ public class Character : Clickable
 
     public characterState myState;
 
-    AnimationController animator;
+    public AnimationController animator;
 
     bool isMoving = false;
 

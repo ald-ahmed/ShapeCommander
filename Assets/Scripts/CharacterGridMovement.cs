@@ -26,7 +26,9 @@ public class CharacterGridMovement : MonoBehaviour
     {
         isMoving = false;
 
-        Invoke("Test", 2);
+        // GetComponent<AnimationController>();
+
+        //Invoke("Test", 2);
 
     }
 

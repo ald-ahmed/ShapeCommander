@@ -4282,7 +4282,9 @@ PrefabInstance:
     - target: {fileID: 8351643499594397578, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_Text
-      value: Attack
+      value: 'ATTACK
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
@@ -5012,6 +5014,8 @@ GameObject:
   - component: {fileID: 1044048196}
   - component: {fileID: 1044048195}
   - component: {fileID: 1044048194}
+  - component: {fileID: 1044048198}
+  - component: {fileID: 1044048199}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -5088,7 +5092,7 @@ RectTransform:
   m_GameObject: {fileID: 1044048193}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.6}
-  m_LocalScale: {x: 0.53166366, y: 0.53166366, z: 0.53166366}
+  m_LocalScale: {x: 0.27065244, y: 0.27065244, z: 0.27065244}
   m_Children:
   - {fileID: 1559829544}
   - {fileID: 1193619070}
@@ -5097,9 +5101,33 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 8.25}
+  m_AnchoredPosition: {x: 2.073, y: 7.857}
   m_SizeDelta: {x: 2.49, y: 0.46}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1044048198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044048193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6919b4bab4b69ff4f9cd7006f3bf376b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1044048199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044048193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d1efb0701f84da5b9f464bda3d7fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068009283
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,7 +7073,7 @@ PrefabInstance:
     - target: {fileID: 8351643499594397578, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_Text
-      value: Attack
+      value: ATTACK
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
@@ -7334,7 +7362,9 @@ PrefabInstance:
     - target: {fileID: 8351643499594397578, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_Text
-      value: Attack
+      value: 'ATTACK
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
@@ -12450,6 +12480,7 @@ GameObject:
   - component: {fileID: 2105287781}
   - component: {fileID: 2105287783}
   - component: {fileID: 2105287782}
+  - component: {fileID: 2105287784}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -12501,7 +12532,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.31
+  m_FillAmount: 0.85
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -12514,6 +12545,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105287780}
   m_CullTransparentMesh: 0
+--- !u!114 &2105287784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105287780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d163a9b327a244c58b305d51e9ca84a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myImage: {fileID: 0}
 --- !u!1001 &2106225677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12800,6 +12844,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8351643499594397578, guid: acfc090bc8b9400488ed751056734d23,
+        type: 3}
+      propertyPath: m_Text
+      value: 'ATTACK
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3458407083915706265, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -12829,11 +12880,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.r
       value: 0.91372555
-      objectReference: {fileID: 0}
-    - target: {fileID: 8351643499594397578, guid: acfc090bc8b9400488ed751056734d23,
-        type: 3}
-      propertyPath: m_Text
-      value: Attack
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}

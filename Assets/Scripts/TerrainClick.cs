@@ -15,7 +15,7 @@ public class TerrainClick : Clickable
         //Debug.DrawRay(_controller.Position, myController.transform.forward);
         //Debug.Log("Terrain clicked: " + hit.point);
         //GameObject.Find("Character").GetComponent<NavMeshAgent>().SetDestination(hit.point);
-        playerManager.SendSelectedCharacter(hit.point);
+       // playerManager.SendSelectedCharacter(hit.point);
     }
 
     void Update()

@@ -13,10 +13,11 @@ public class MyControl : MonoBehaviour {
 
     public bool allowPlacement = false;
     private bool hasClicked = false;
+    private bool unpressed = false;
 
     private void Start() {
         _cube = GameObject.Find("Game");
-        persistentBehavior = _cube.GetComponent<MLPersistentBehavior>();
+        //persistentBehavior = _cube.GetComponent<MLPersistentBehavior>();
         _camera = GameObject.Find("Main Camera");
       
         MLInput.Start();
@@ -29,7 +30,7 @@ public class MyControl : MonoBehaviour {
     private void Update() {
         if (allowPlacement)
         {
-            if (_controller.TriggerValue > 0.2f)
+            if (_controller.TriggerValue > 0.2f&&unpressed)
             {
                 hasClicked = true;
                 Vector3 origin = new Vector3(_camera.transform.position.x, _camera.transform.position.y, _camera.transform.position.z);
@@ -45,6 +46,10 @@ public class MyControl : MonoBehaviour {
                 {
                     t.PositionUpdated();
                 }
+            }
+            else
+            {
+                unpressed = true;
             }
         }
     }

@@ -16,10 +16,19 @@ public class ClickableHex : Clickable
         }
         else if (myManager.GetSelectedCharacter().myState == Character.characterState.move)
         {
-            Debug.Log("selected character should move");
-            //myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().AddToPath(m_myTile);
-            //myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().Navigate();
-            //myManager.GetSelectedCharacter().StartMoving();
+            Debug.Log("selected character should move");//going to move this stuff to the PlayerManager for networking
+
+            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                myManager.SendSelectedCharacter(m_myTile.index);
+            else
+                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSendSelected(m_myTile.index);
+
+
+            
+            /*myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().AddToPath(m_myTile);
+            myManager.GetSelectedCharacter().GetComponent<CharacterGridMovement>().Navigate();
+            myManager.GetSelectedCharacter().StartMoving();*/
+
         }
     }
 
@@ -43,7 +52,12 @@ public class ClickableHex : Clickable
     {
         base.Start();
         m_myTile = GetComponent<Tile>();
-        myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        //myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+    }
+
+    public void SetPlayerManager(PlayerManager p)
+    {
+        myManager = p;
     }
 
     // Update is called once per frame

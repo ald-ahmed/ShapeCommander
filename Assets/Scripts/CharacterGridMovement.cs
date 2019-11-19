@@ -38,6 +38,11 @@ public class CharacterGridMovement : MonoBehaviour
 
     }
 
+    public void MoveToDestination(Tile dest)
+    {
+        MoveCharacter(currentTile, dest, 100);//100=range, to be implemented later
+    }
+
     void MoveCharacter(Tile start, Tile end, int range)
     {
         (bool success, List<Tile> path) = gameGrid.MovePath(start, end, range);
@@ -93,16 +98,19 @@ public class CharacterGridMovement : MonoBehaviour
         //Only triggers after MoveTiles is called
         if(isMoving == true)
         {
-        
+
             //Move along path with time
             float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, path[stepNum], step); //+new Vector3(0,elevation,0)
-
-            if ((transform.position - path[stepNum]).magnitude < 0.01)
+            Vector3 tar = path[stepNum];
+            tar.y = tar.y + .08f;
+            transform.position = Vector3.MoveTowards(transform.position, tar, step);
+            
+            if ((transform.position - tar).magnitude < 0.01)
             {
 
                 //Set next step for next destination
                 stepNum++;
+                
                 //If it is the last step, end there.
                 if (stepNum >= path.Count)
                 {
@@ -110,13 +118,20 @@ public class CharacterGridMovement : MonoBehaviour
                     aController.AnimateIdle();
                     //Turn off movement
                     isMoving = false;
-                   
-                    
+                    path.Clear();
+                    stepNum = 0;
+                    //Rotate
+                    //transform.LookAt(path[stepNum]);
                 }
-                //Rotate
-                transform.LookAt(path[stepNum]);
-                
+                else
+                {
+                    Vector3 tarb = path[stepNum];
+                    tarb.y = tarb.y + .08f;
+                    transform.LookAt(tarb);
+                }
+
             }
+            
         }        
     }
 

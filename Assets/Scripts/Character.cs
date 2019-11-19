@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.Networking;
 public class Character : Clickable
 {
-    public string characterType;
+    public int id = 0;
+
+
 
     public GameObject attackOrb;
 
@@ -30,6 +32,8 @@ public class Character : Clickable
 
     public bool friendly = true;
 
+    public string characterType;
+
     public enum characterState { move, attack, idle };
 
     public characterState myState;
@@ -43,9 +47,10 @@ public class Character : Clickable
     void Start()
     {
         base.Start();
+        
         animator = GetComponentInChildren<AnimationController>();
         myState = characterState.idle;
-        myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+        //myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         highlight = transform.Find("Highlight").gameObject;//might be better to SerializeField these and drag n drop
         if (friendly)
         {
@@ -58,6 +63,11 @@ public class Character : Clickable
         highlight.SetActive(false);
         
         
+    }
+
+    public void SetPlayerManager(PlayerManager p)
+    {
+        myManager = p;
     }
 
     // Update is called once per frame
@@ -89,7 +99,7 @@ public class Character : Clickable
     protected override void OnClicked()
     {
         //Debug.Log("Character clicked on!");
-        if (friendly)
+        if (friendly)//is mine
             Select(false);
         else
             myManager.SetTargetedEnemy(this);
@@ -99,7 +109,14 @@ public class Character : Clickable
     {
         if (!fromMenu)
         {
-            myManager.SetSelectedCharacter(this);
+            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                myManager.SetSelectedCharacter(this);
+            else
+            {
+                //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
+                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSetSelectedCharacter(id);
+                Debug.Log("Client Clicked");
+            }
         }
         selected = true;
         highlight.SetActive(true);
@@ -132,6 +149,7 @@ public class Character : Clickable
 
     public void StartMoving()
     {
+        Debug.Log("MOVING!");
         Deselect(false);
         myState = characterState.idle;
     }

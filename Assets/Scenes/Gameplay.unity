@@ -4908,6 +4908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aController: {fileID: 605047800}
   gameGrid: {fileID: 109031454}
+  currentTile: {fileID: 0}
   isMoving: 0
   speed: 0.2
 --- !u!1 &639180038
@@ -10185,6 +10186,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186908583}
   m_Mesh: {fileID: 1227931980}
+--- !u!114 &1212609643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 729913266945644727, guid: 0c3459d2a9463d246a0c91d3209255b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1772644696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2b5690d265f0b4ab633c42e80b5792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1227931980
 Mesh:
   m_ObjectHideFlags: 0
@@ -12550,6 +12563,16 @@ PrefabInstance:
       propertyPath: stepNum
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8351643500442697094, guid: 0c3459d2a9463d246a0c91d3209255b6,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351643500442697093, guid: 0c3459d2a9463d246a0c91d3209255b6,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1212609643}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: 0c3459d2a9463d246a0c91d3209255b6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c3459d2a9463d246a0c91d3209255b6, type: 3}

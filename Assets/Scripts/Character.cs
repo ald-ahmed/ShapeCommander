@@ -28,6 +28,9 @@ public class Character : Clickable
     [SerializeField]
     private UIClickable attackButton;
 
+    
+    public int team = 0;
+
     private PlayerManager myManager;
 
     public bool friendly = true;
@@ -52,6 +55,7 @@ public class Character : Clickable
         myState = characterState.idle;
         //myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         highlight = transform.Find("Highlight").gameObject;//might be better to SerializeField these and drag n drop
+        
         if (friendly)
         {
             options = transform.Find("Canvas").gameObject;
@@ -196,5 +200,14 @@ public class Character : Clickable
         myState = characterState.idle;
     }
 
+    public void SetFriendly(bool afriendly)
+    {
+        if (!afriendly)
+        {
+            friendly = false;
+            highlight.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, .5f);
+          
+        }
+    }
 
 }

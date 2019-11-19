@@ -23,12 +23,17 @@ public class PlayerFace : NetworkBehaviour
         m_target = GameObject.Find("Main Camera").transform;
         m_placementControl = GetComponent<MyControl>();
         m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-
+        int myTeam;
         if (GetComponent<NetworkIdentity>().isServer)
         {
+            myTeam = 1;
             m_canPlaceMap = true;
             Debug.Log("I can place the map");
             m_placementControl.allowPlacement = true;
+        }
+        else
+        {
+            myTeam = 0;
         }
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {
@@ -36,6 +41,15 @@ public class PlayerFace : NetworkBehaviour
             foreach(MeshRenderer p in m)
             {
                 p.enabled = false;
+            }
+        }
+
+        Character[] units = GameObject.FindObjectsOfType<Character>();
+        foreach(Character c in units)
+        {
+            if (c.team != myTeam)
+            {
+                c.SetFriendly(false);
             }
         }
     }

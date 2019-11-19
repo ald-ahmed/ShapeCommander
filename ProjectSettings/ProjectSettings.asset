@@ -634,7 +634,7 @@ PlayerSettings:
     m_ModelFolderPath: 
     m_PortalFolderPath: 
   luminCert:
-    m_CertPath: H:/Downloads/privatekey/anton.cert
+    m_CertPath: D:/UnityWork/ShapeCommander/538chris2.cert
     m_SignPackage: 1
   luminIsChannelApp: 0
   luminVersion:

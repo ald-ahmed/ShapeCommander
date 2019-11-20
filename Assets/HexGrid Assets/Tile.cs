@@ -20,7 +20,8 @@ public class Tile : MonoBehaviour {
         ATTACK,
 	}
 
-	private OutlineState OutlineInteract = OutlineState.DEFAULT;
+	private OutlineState outlineInteract = OutlineState.DEFAULT;
+    private OutlineState previousOutline = OutlineState.DEFAULT;
 
     private void Start()
     {
@@ -65,7 +66,7 @@ public class Tile : MonoBehaviour {
     //TODO: this function should switch the range indicator between the attack color and the move color
     public void SetColor()
     {
-		switch (OutlineInteract)
+		switch (outlineInteract)
 		{
 			case OutlineState.DEFAULT:
 				rangeIndicator.startColor = Color.black;
@@ -96,19 +97,24 @@ public class Tile : MonoBehaviour {
     
     public void Highlight(string interactState)
 	{
-        Enum.TryParse(interactState, out OutlineInteract);
+        Enum.TryParse(interactState, out outlineInteract);
 		SetColor();
 	}
 
     public void Highlight() // Specifically for "mouseover"
     {
-		OutlineInteract = OutlineState.MOUSEOVER;
+        if (outlineInteract != OutlineState.MOUSEOVER)
+        {
+            previousOutline = outlineInteract;
+        }
+        outlineInteract = OutlineState.MOUSEOVER;
 		SetColor();
         //lines.enabled = true;//turns on the thick white selection highlight
     }
-    public void UnHighlight() // specifically for "mouseover"
+    public void UnHighlight() // ***specifically for "mouseover"***
     {
-		OutlineInteract = OutlineState.DEFAULT;
+        outlineInteract = previousOutline;
+        previousOutline = OutlineState.DEFAULT;
 		SetColor();
         //lines.enabled = false;
     }
@@ -121,12 +127,12 @@ public class Tile : MonoBehaviour {
 
     public void SetOccupied()
 	{
-		OutlineInteract = OutlineState.OCCUPIED;
+		outlineInteract = OutlineState.OCCUPIED;
 		occupied = true;
 	}
     public void SetUnoccupied()
 	{
-		OutlineInteract = OutlineState.DEFAULT;
+		outlineInteract = OutlineState.DEFAULT;
 		occupied = false;
 	}
 

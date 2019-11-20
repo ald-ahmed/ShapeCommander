@@ -10,6 +10,8 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] AnimationController aController;
     [SerializeField] CharacterGridMovement gManager;
     [SerializeField] Grid gameGrid;
+    private Character attackingCharacter;
+    [SerializeField] int attackPower;
 
     private float aWeight = .5f;
 
@@ -18,7 +20,7 @@ public class CharacterAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        attackingCharacter = this.gameObject.GetComponent<Character>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class CharacterAttack : MonoBehaviour
         
     }
 
-    void DisplayAttackRange()
+    public void DisplayAttackRange()
     {
         Tile myLocation = gManager.currentTile;
         List<Tile> attackTiles = gameGrid.TilesInRange(myLocation, attackRange);
@@ -38,7 +40,7 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    void UnDisplayAttackRange()
+    public void UnDisplayAttackRange()
     {
         Tile myLocation = gManager.currentTile;
         List<Tile> attackTiles = gameGrid.TilesInRange(myLocation, attackRange);
@@ -49,18 +51,28 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    void Attack(Character target)
+    public void Attack(Character target)
     {
         //Face your opponent
         transform.LookAt(target.transform.position);
         target.transform.LookAt(transform.position);
         //Animate attack
         aController.AnimateAttack();
-        target.animator.AnimateHit();
+        target.current_health -= attackPower;
+        if (target.current_health <= 0)
+        {
+            target.animator.AnimateDeath();
+        } else
+        {
+            target.animator.AnimateHit();
+        }
+        
         //Instatiate attack effect (we'll figure out a better placement vector)
         Vector3 effectPos = aWeight * transform.position + (1 - aWeight) * target.transform.position;
         thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
         UnDisplayAttackRange();
+        // Remove attack option for turn
+        attackingCharacter.ToggleAttackButton();
         waitToDestroy();
     }
 

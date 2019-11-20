@@ -7,7 +7,10 @@ public class CharacterGridMovement : MonoBehaviour
 
     [SerializeField] AnimationController aController;
     [SerializeField] Grid gameGrid;
-
+    [SerializeField] int maxMovement;
+    private Character movingCharacter;
+    public int remainingMoves;
+    
     public Tile currentTile;
     public bool isMoving;
     //public Tile currentTile;
@@ -25,11 +28,40 @@ public class CharacterGridMovement : MonoBehaviour
     void Start()
     {
         isMoving = false;
+        remainingMoves = maxMovement;
+        movingCharacter = this.gameObject.GetComponent<Character>();
 
         // GetComponent<AnimationController>();
 
         //Invoke("Test", 2);
 
+    }
+
+    public void Highlight_Reachable()
+	{
+        List<Tile> reachable = new List<Tile>();
+        List<Tile> pointers = new List<Tile>(); // throwaway
+        (reachable,pointers) = gameGrid.TilesReachable(currentTile, remainingMoves);
+        for (int i = 0; i < reachable.Count; i++)
+        {
+            reachable[i].Highlight("MOVEMENT");
+        }
+	}
+
+    public void Unhighlight_Reachable()
+    {
+        List<Tile> reachable = new List<Tile>();
+        List<Tile> pointers = new List<Tile>(); // throwaway
+        (reachable, pointers) = gameGrid.TilesReachable(currentTile, remainingMoves);
+        for (int i = 0; i < reachable.Count; i++)
+        {
+            reachable[i].Highlight("DEFAULT");
+        }
+    }
+
+    public void ResetRemainingMoves()
+    {
+        remainingMoves = maxMovement;
     }
 
     void SetTile(Tile location)
@@ -40,12 +72,12 @@ public class CharacterGridMovement : MonoBehaviour
 
     public void MoveToDestination(Tile dest)
     {
-        MoveCharacter(currentTile, dest, 100);//100=range, to be implemented later
+        MoveCharacter(currentTile, dest, remainingMoves);//100=range, to be implemented later
     }
 
     void MoveCharacter(Tile start, Tile end, int range)
     {
-        (bool success, List<Tile> path) = gameGrid.MovePath(start, end, range);
+        (bool success, int depth, List<Tile> path) = gameGrid.MovePath(start, end, range);
 
 
         if (success)
@@ -56,6 +88,10 @@ public class CharacterGridMovement : MonoBehaviour
         {
             Debug.Log("No Path Found");
         }
+
+        Unhighlight_Reachable();
+
+        remainingMoves -= depth;
 
         MoveTiles(path);
     }
@@ -74,7 +110,7 @@ public class CharacterGridMovement : MonoBehaviour
 
         
 
-        (bool success, List<Tile> path) = gameGrid.MovePath(firstCube, lastCube, 4);
+        (bool success, int depth, List<Tile> path) = gameGrid.MovePath(firstCube, lastCube, 4);
 
 
         if (success)
@@ -148,6 +184,11 @@ public class CharacterGridMovement : MonoBehaviour
         for(int ind = 0; ind < movePath.Count; ind++)
         {
             path.Add(movePath[ind].transform.position);
+        }
+
+        if (remainingMoves <= 0)
+        {
+            movingCharacter.ToggleMoveButton();
         }
 
         SetTile(movePath[movePath.Count-1]);

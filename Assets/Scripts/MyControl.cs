@@ -17,7 +17,7 @@ public class MyControl : MonoBehaviour {
 
     private void Start() {
         _cube = GameObject.Find("Game");
-        //persistentBehavior = _cube.GetComponent<MLPersistentBehavior>();
+        persistentBehavior = _cube.GetComponent<MLPersistentBehavior>();
         _camera = GameObject.Find("Main Camera");
       
         MLInput.Start();
@@ -28,15 +28,24 @@ public class MyControl : MonoBehaviour {
         MLInput.Stop();
     }
     private void Update() {
+        
         if (allowPlacement)
         {
             if (_controller.TriggerValue > 0.2f&&unpressed)
             {
                 hasClicked = true;
-                Vector3 origin = new Vector3(_camera.transform.position.x, _camera.transform.position.y, _camera.transform.position.z);
-                _cube.transform.position = origin + _camera.transform.forward * _distance;
+               // Vector3 origin = new Vector3(_camera.transform.position.x, _camera.transform.position.y, _camera.transform.position.z);
+                Vector3 origin = _controller.Position;
+                
+
+                _cube.transform.position = origin + GameObject.Find("Beam").transform.forward * _distance;
+
+                //close:
+                // _cube.transform.rotation = Quaternion.LookRotation(GameObject.Find("Beam").transform.forward, Vector3.up);
+                _cube.transform.rotation = Quaternion.Euler(0, GameObject.Find("Beam").transform.forward.y, 0);
+                // _cube.transform.position = origin + _camera.transform.forward * _distance;
                 //_cube.transform.rotation = _camera.transform.rotation;
-                //persistentBehavior.UpdateBinding();
+                persistentBehavior.UpdateBinding();
             }
             else if (hasClicked)
             {

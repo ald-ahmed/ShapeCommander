@@ -159,7 +159,17 @@ public class Character : Clickable
     public void Deselect(bool fromManager)
     {
         if (!fromManager)
-            myManager.SetSelectedCharacter(null);
+        {
+            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                myManager.SetSelectedCharacter(null);
+            else
+            {
+                //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
+                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSetSelectedCharacter(-1);
+               
+            }
+            //myManager.SetSelectedCharacter(null);
+        }
         selected = false;
         options.SetActive(false);
         UnHighlighted();

@@ -93,6 +93,7 @@ public class PlayerFace : NetworkBehaviour
 
     }
 
+    [Command]
     public void CmdAttackTarget(int id)
     {
         GameObject.Find("PlayerManager").GetComponent<PlayerManager>().AttackTarget(id);

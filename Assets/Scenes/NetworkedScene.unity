@@ -4156,7 +4156,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.80799985
+      value: -1.808
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -4354,7 +4354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEffect: {fileID: 0}
+  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+    type: 3}
   attackRange: 3
   aController: {fileID: 994298435}
   gManager: {fileID: 994298438}
@@ -6939,7 +6940,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6320004
+      value: 3.211
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -6949,7 +6950,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.2320004
+      value: 1.427
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -7127,9 +7128,28 @@ MonoBehaviour:
   gameGrid: {fileID: 1445694181}
   maxMovement: 4
   remainingMoves: 0
-  currentTile: {fileID: 666342946}
+  currentTile: {fileID: 564531154}
   isMoving: 0
   speed: 0.2
+--- !u!114 &1248277610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248277607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+    type: 3}
+  attackRange: 4
+  aController: {fileID: 1248277606}
+  gManager: {fileID: 1248277609}
+  gameGrid: {fileID: 1445694181}
+  attackPower: 3
 --- !u!54 &1250385723
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7235,7 +7255,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2879999
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -7245,7 +7265,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.4920006
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -7411,7 +7431,7 @@ MonoBehaviour:
   gameGrid: {fileID: 1445694181}
   maxMovement: 4
   remainingMoves: 0
-  currentTile: {fileID: 666342946}
+  currentTile: {fileID: 1637488511}
   isMoving: 0
   speed: 0.2
 --- !u!114 &1272275692 stripped
@@ -7426,6 +7446,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a4eaa7de93bed44a1a1ef4f8583883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1272275693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272275690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+    type: 3}
+  attackRange: 4
+  aController: {fileID: 1272275689}
+  gManager: {fileID: 1272275691}
+  gameGrid: {fileID: 1445694181}
+  attackPower: 3
 --- !u!1 &1274799241
 GameObject:
   m_ObjectHideFlags: 0
@@ -10085,7 +10124,7 @@ MonoBehaviour:
   gameGrid: {fileID: 1445694181}
   maxMovement: 4
   remainingMoves: 0
-  currentTile: {fileID: 666342946}
+  currentTile: {fileID: 1027265250}
   isMoving: 0
   speed: 0.2
 --- !u!114 &1621580029 stripped
@@ -10118,7 +10157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEffect: {fileID: 0}
+  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+    type: 3}
   attackRange: 3
   aController: {fileID: 1621580026}
   gManager: {fileID: 1621580028}
@@ -12736,7 +12776,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.77
+      value: -1.304
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
@@ -12746,7 +12786,7 @@ PrefabInstance:
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.59
+      value: -2.093
       objectReference: {fileID: 0}
     - target: {fileID: 8351643500442697092, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}

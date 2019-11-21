@@ -8,9 +8,6 @@ public class Character : Clickable
     public int id = 0;
 
 
-
-    public GameObject attackOrb;
-
     private GameObject highlight;
 
     private GameObject options;
@@ -27,6 +24,15 @@ public class Character : Clickable
 
     [SerializeField]
     private UIClickable attackButton;
+
+    private CharacterGridMovement moveScript;
+
+    private CharacterAttack attackScript;
+
+    [SerializeField]
+    public int total_health;
+
+    public int current_health;
 
     
     public int team = 0;
@@ -50,7 +56,9 @@ public class Character : Clickable
     void Start()
     {
         base.Start();
-        
+
+        attackScript = this.gameObject.GetComponent<CharacterAttack>();
+        moveScript = this.gameObject.GetComponent<CharacterGridMovement>();
         animator = GetComponentInChildren<AnimationController>();
         myState = characterState.idle;
         //myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
@@ -68,6 +76,12 @@ public class Character : Clickable
         
         
     }
+
+    private void Awake()
+    {
+        current_health = total_health;
+    }
+
 
     public void SetPlayerManager(PlayerManager p)
     {
@@ -160,44 +174,47 @@ public class Character : Clickable
 
     private void MoveClicked()
     {
+        moveScript.Highlight_Reachable();
         myState = characterState.move;//maybe later on this can include a visual cursor showing up on the terrain indicating validity of move
         options.SetActive(false);
     }
 
+    public void ToggleMoveButton()
+    {
+        moveButton.enabled = !moveButton.enabled;
+    }
+
     private void AttackClicked()
     {
+        attackScript.DisplayAttackRange();
         myState = characterState.attack;
         options.SetActive(false);
     }
 
     public void AttackEnemy(Character enemy)
     {
-        //TODO: Ahmed + Uche
-        //can get the enemy's position: enemy.transform.position.  Our position = transform.position
+        attackScript.Attack(enemy);
+        WaitToIdle(enemy);
 
-        // float step = (float)(0.5 * Time.deltaTime);
-        //attackOrb.transform.position = Vector3.MoveTowards(transform.position, enemy.transform.position, step);
-        attackOrb.transform.position = transform.position;
-        if (Vector3.Distance(attackOrb.transform.position,enemy.transform.position)<1) {
-            attackOrb.GetComponent<Renderer>().enabled = false;
-            attackOrb.GetComponent<ParticleSystem>().enableEmission = false;
-            attackOrb.transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = false;
-            
-        }
-        else
-        {
-            attackOrb.transform.Find("Sphere").GetComponent<MeshRenderer>().enabled = true;
-            attackOrb.GetComponent<Renderer>().enabled = true;
-            attackOrb.GetComponent<ParticleSystem>().enableEmission = true;
+    }
 
-        }
-
-        attackOrb.GetComponent<attack>().SetTarget(enemy.transform);
-
-
-        Debug.Log("Attacking enemy!");
-        Deselect(false);
+    IEnumerator WaitToIdle(Character enemy)
+    {
+        yield return new WaitForSeconds(3);
         myState = characterState.idle;
+        if (enemy.current_health > 0)
+        {
+            enemy.animator.AnimateIdle();
+            enemy.myState = characterState.idle;
+        } else
+        {
+            Destroy(enemy);
+        }
+    }
+
+    public void ToggleAttackButton()
+    {
+        attackButton.enabled = !attackButton.enabled;
     }
 
     public void SetFriendly(bool afriendly)

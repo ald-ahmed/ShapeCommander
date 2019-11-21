@@ -211,16 +211,18 @@ public class Character : Clickable
         options.SetActive(false);
     }
 
+    private IEnumerator coroutine;
+
     public void AttackEnemy(Character enemy)
     {
         attackScript.Attack(enemy);
-        WaitToIdle(enemy);
-
+        coroutine = WaitToIdle(enemy);
+        StartCoroutine(coroutine);
     }
 
     IEnumerator WaitToIdle(Character enemy)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         myState = characterState.idle;
         if (enemy.current_health > 0)
         {
@@ -228,7 +230,7 @@ public class Character : Clickable
             enemy.myState = characterState.idle;
         } else
         {
-            Destroy(enemy);
+            Destroy(enemy.gameObject);
         }
     }
 

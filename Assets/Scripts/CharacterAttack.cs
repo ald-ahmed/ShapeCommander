@@ -16,6 +16,7 @@ public class CharacterAttack : MonoBehaviour
     private float aWeight = .5f;
 
     private GameObject thisAttack;
+    private IEnumerator coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -73,13 +74,14 @@ public class CharacterAttack : MonoBehaviour
         UnDisplayAttackRange();
         // Remove attack option for turn
         attackingCharacter.ToggleAttackButton();
-        waitToDestroy();
+        coroutine = WaitToDestroy();
+        StartCoroutine(coroutine);
     }
 
-    IEnumerator waitToDestroy()
+    IEnumerator WaitToDestroy()
     {
-        yield return new WaitForSeconds(3);
-        Destroy(thisAttack);
+        yield return new WaitForSeconds(5);
+        Destroy(thisAttack.gameObject);
         aController.AnimateIdle();
     }
 }

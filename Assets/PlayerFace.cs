@@ -93,6 +93,11 @@ public class PlayerFace : NetworkBehaviour
 
     }
 
+    public void CmdAttackTarget(int id)
+    {
+        GameObject.Find("PlayerManager").GetComponent<PlayerManager>().AttackTarget(id);
+    }
+
     [Command]
     public void CmdSendSelected(CubeIndex target)
     {

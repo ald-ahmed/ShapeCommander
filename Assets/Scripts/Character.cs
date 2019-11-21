@@ -120,7 +120,17 @@ public class Character : Clickable
         if (friendly)//is mine
             Select(false);
         else
-            myManager.SetTargetedEnemy(this);
+        {
+            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                myManager.AttackTarget(id);
+            else
+            {
+                //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
+                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdAttackTarget(id);
+                Debug.Log("Client Clicked");
+            }
+            
+        }
     }
 
     public void Select(bool fromMenu)

@@ -226,11 +226,12 @@ public class Grid : MonoBehaviour {
 		return Distance(a.index, b.index);
 	}
 
-    public (bool, List<Tile>) MovePath(Tile start, Tile end, int range)
+    public (bool, int, List<Tile>) MovePath(Tile start, Tile end, int range)
 	{
         List<Tile> optimalPath = new List<Tile>();
         Tile nextTile = new Tile(); // Do I need to write constructor?
         int backpointer = -1;
+        int depth = 0;
 
         (List<Tile> reachableTiles, List<Tile> backTiles) = TilesReachable(start, range);
 
@@ -240,31 +241,34 @@ public class Grid : MonoBehaviour {
             {
                 optimalPath.Add(end); // adds terminal Tile to path
                 backpointer = i; // sets first backpointer value
+                depth += 1;
             }
         }
 
         if (reachableTiles.Count == 0)
         {
-            return (false, optimalPath); // Tile not in range 
+            return (false, 0, optimalPath); // Tile not in range 
         }
 
         while (backpointer != 0) // terminates at starting Tile
         {
             nextTile = backTiles[backpointer]; // next Tile backwards on Path
             optimalPath.Insert(0, nextTile);
+            depth += 1;
             for (int i = 0; i < reachableTiles.Count; i++)
             {
                 if (nextTile.Equals(reachableTiles[i])) // next Tile on Path
                 {
                     backpointer = i; // sets new backpointer value
+                    
                 }
             }
         }
 
-        return (true,optimalPath);
+        return (true, depth, optimalPath);
 	}
 
-    public (bool, List<Tile>) MovePath(CubeIndex start, CubeIndex end, int range)
+    public (bool, int, List<Tile>) MovePath(CubeIndex start, CubeIndex end, int range)
     {
         return MovePath(TileAt(start), TileAt(end), range);
     }

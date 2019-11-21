@@ -193,6 +193,10 @@ public class CharacterGridMovement : MonoBehaviour
         }
 
         SetTile(movePath[movePath.Count-1]);
+        movePath[0].SetUnOccupied();
+        movePath[movePath.Count - 1].SetOccupied();
+
+
         
     }
 

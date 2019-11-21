@@ -70,6 +70,11 @@ public class PlayerManager : NetworkBehaviour
         
     }
 
+    public void AttackTarget(int target)
+    {
+        RpcAttackTarget(target);
+    }
+
     public void SetTargetedEnemy(Character c)
     {
         if (selectedCharacter != null)
@@ -111,6 +116,12 @@ public class PlayerManager : NetworkBehaviour
                 return c;
         }
         return null;
+    }
+    [ClientRpc]
+    public void RpcAttackTarget(int target)
+    {
+        if(GetCharacterByID(target)!=null)
+            selectedCharacter.AttackEnemy(GetCharacterByID(target));
     }
 
     [ClientRpc]

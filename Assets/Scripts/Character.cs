@@ -25,7 +25,7 @@ public class Character : Clickable
     [SerializeField]
     private UIClickable attackButton;
 
-    private CharacterGridMovement moveScript;
+    public CharacterGridMovement moveScript;
 
     private CharacterAttack attackScript;
 

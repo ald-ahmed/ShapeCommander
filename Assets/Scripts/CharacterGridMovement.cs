@@ -83,17 +83,18 @@ public class CharacterGridMovement : MonoBehaviour
         if (success)
         {
             Debug.Log("Found Path!");
+            Unhighlight_Reachable();
+
+            remainingMoves -= depth;
+
+            MoveTiles(path);
         }
         else
         {
             Debug.Log("No Path Found");
         }
 
-        Unhighlight_Reachable();
-
-        remainingMoves -= depth;
-
-        MoveTiles(path);
+        
     }
 
     // test movement

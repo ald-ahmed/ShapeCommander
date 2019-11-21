@@ -51,6 +51,13 @@ public class Tile : MonoBehaviour {
         for (int vert = 0; vert <= 6; vert++)
             lines.SetPosition(vert, Tile.Corner(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy));//1 = hexRadius, 
     }
+    public void PositionUpdatedPlus(float rot)
+    {
+        for (int vert = 0; vert <= 6; vert++)
+            rangeIndicator.SetPosition(vert, Tile.CornerPlus(new Vector3(transform.position.x, transform.position.y, transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy, rot));
+        for (int vert = 0; vert <= 6; vert++)
+            lines.SetPosition(vert, Tile.CornerPlus(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy,rot));//1 = hexRadius, 
+    }
 
     public void SetInRange(bool inRange)//in range of attack or movement?  movement should be blue or green or something while attack is red
     {
@@ -134,13 +141,24 @@ public class Tile : MonoBehaviour {
 
     public static Vector3 Corner(Vector3 origin, float radius, int corner, HexOrientation orientation){
 		float angle = 60 * corner;
-		if(orientation == HexOrientation.Pointy)
+		if(orientation == HexOrientation.Pointy)//add rotation.y maybe
 			angle += 30;
 		angle *= Mathf.PI / 180;
 		return new Vector3(origin.x + radius * Mathf.Cos(angle), origin.y, origin.z + radius * Mathf.Sin(angle));//y was 0.0
 	}
 
-	public static void GetHexMesh(float radius, HexOrientation orientation, ref Mesh mesh) {
+    public static Vector3 CornerPlus(Vector3 origin, float radius, int corner, HexOrientation orientation,float yRot)
+    {
+        float angle = 60 * corner;
+        if (orientation == HexOrientation.Pointy)//add rotation.y maybe
+            angle += 30;
+        Debug.Log("yrot: " + yRot);
+        angle -= yRot;
+        angle *= Mathf.PI / 180;
+        return new Vector3(origin.x + radius * Mathf.Cos(angle), origin.y, origin.z + radius * Mathf.Sin(angle));//y was 0.0
+    }
+
+    public static void GetHexMesh(float radius, HexOrientation orientation, ref Mesh mesh) {
 		mesh = new Mesh();
 
 		List<Vector3> verts = new List<Vector3>();

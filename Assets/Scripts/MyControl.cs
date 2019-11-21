@@ -42,18 +42,25 @@ public class MyControl : MonoBehaviour {
 
                 //close:
                 // _cube.transform.rotation = Quaternion.LookRotation(GameObject.Find("Beam").transform.forward, Vector3.up);
-                _cube.transform.rotation = Quaternion.Euler(0, GameObject.Find("Beam").transform.forward.y, 0);
+                _cube.transform.forward = GameObject.Find("Beam").transform.forward;
+                Vector3 v = _cube.transform.rotation.eulerAngles;
+                _cube.transform.rotation = Quaternion.Euler(0, v.y, 0);//flatten it out
+                //_cube.transform.rotation = Quaternion.Euler(0, GameObject.Find("Beam").transform.forward.y, 0);
                 // _cube.transform.position = origin + _camera.transform.forward * _distance;
                 //_cube.transform.rotation = _camera.transform.rotation;
-                persistentBehavior.UpdateBinding();
+                //persistentBehavior.UpdateBinding();
             }
             else if (hasClicked)
             {
                 allowPlacement = false;
+                Vector3 v = _cube.transform.rotation.eulerAngles;
+                _cube.transform.rotation = Quaternion.Euler(0, v.y, 0);//flatten it out
+                
                 Tile[] tiles=_cube.transform.Find("GameObject").GetComponentsInChildren<Tile>();
                 foreach(Tile t in tiles)
                 {
-                    t.PositionUpdated();
+                    //t.PositionUpdated();
+                    t.PositionUpdatedPlus(v.y);
                 }
             }
             else

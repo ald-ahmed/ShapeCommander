@@ -23,13 +23,7 @@ public class PlayerFace : NetworkBehaviour
         m_target = GameObject.Find("Main Camera").transform;
         m_placementControl = GetComponent<MyControl>();
         m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        List<MLPCF> pcfList = new List<MLPCF>();
-        MLPersistentCoordinateFrames.GetAllPCFs(out pcfList);
-        
-        foreach(MLPCF p in pcfList)
-        {
-            Debug.Log("PCF: " + p.ToString());
-        }
+       
 
         int myTeam;
         m_canPlaceMap = true;

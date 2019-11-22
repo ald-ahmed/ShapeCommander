@@ -5,20 +5,20 @@ using UnityEngine;
 using UnityEngine.XR.MagicLeap;
 
 public class MyControl : MonoBehaviour {
-    
-    private GameObject _cube, _camera;
+
+    private GameObject _cube;
     private MLInputController _controller;
   
     private const float _distance = 2.0f;
 
-    public bool allowPlacement = false;
+    private bool allowPlacement = true;
     private bool hasClicked = false;
     private bool unpressed = false;
 
     private void Start() {
         _cube = GameObject.Find("Game");
        
-        _camera = GameObject.Find("Main Camera");
+        
       
         MLInput.Start();
         _controller = MLInput.GetController(MLInput.Hand.Left);

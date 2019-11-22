@@ -5,8 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.XR.MagicLeap;
 public class PlayerFace : NetworkBehaviour
 {
-    private Transform m_target;
-    private bool m_canPlaceMap = false;
+    //private Transform m_target;
     private MyControl m_placementControl;
     private PlayerManager m_playerManager;
 
@@ -15,24 +14,18 @@ public class PlayerFace : NetworkBehaviour
     {
         base.OnStartLocalPlayer();
         gameObject.name = "LocalPlayer";
-        //CmdTestCommand();
-    }
+        //m_target = GameObject.Find("Main Camera").transform;
+        
 
-    void Start()
-    {
-        m_target = GameObject.Find("Main Camera").transform;
-        m_placementControl = GetComponent<MyControl>();
-        m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-       
 
         int myTeam;
-        m_canPlaceMap = true;
+     
         Debug.Log("I can place the map");
-        m_placementControl.allowPlacement = true;
+        
         if (GetComponent<NetworkIdentity>().isServer)
         {
             myTeam = 1;
-            
+
         }
         else
         {
@@ -41,29 +34,34 @@ public class PlayerFace : NetworkBehaviour
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {
             MeshRenderer[] m = GetComponentsInChildren<MeshRenderer>();
-            foreach(MeshRenderer p in m)
+            foreach (MeshRenderer p in m)
             {
                 p.enabled = false;
             }
         }
 
         Character[] units = GameObject.FindObjectsOfType<Character>();
-        foreach(Character c in units)
+        foreach (Character c in units)
         {
             if (c.team != myTeam)
             {
                 c.SetFriendly(false);
             }
         }
+        //m_placementControl = GetComponent<MyControl>();
+        //m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+       // m_placementControl.allowPlacement = true;
+        //CmdTestCommand();
+    }
+
+    void Start()
+    {
+        
     }
 
     void Update()
     {
-        if (m_target != null)
-        {
-            transform.position = m_target.position;
-            transform.rotation = m_target.rotation;
-        }
+       
     }
     public void myFunc()
     {

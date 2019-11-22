@@ -13,16 +13,19 @@ public class NetworkHUD : MonoBehaviour
     [SerializeField]
     private UIClickable m_hostButton;
 
+
+
     private NetworkManager m_networkManager;
 
-    
-    
+
+
+
     void Start()
     {
         m_networkManager = gameObject.GetComponent<NetworkManager>();
         m_joinButton.clickHandler += StartConnecting;
         m_hostButton.clickHandler += StartHosting;
-        
+
     }
 
  

@@ -16,18 +16,22 @@ public class PlayerManager : NetworkBehaviour
     [SerializeField]
     private Grid grid;
 
-    private void Start()
+    private void Awake()
     {
-        foreach(Character c in characters)
+        foreach (Character c in characters)
         {
             c.SetPlayerManager(this);
         }
 
         ClickableHex[] tiles = GameObject.FindObjectsOfType<ClickableHex>();
-        foreach(ClickableHex c in tiles)
+        foreach (ClickableHex c in tiles)
         {
             c.SetPlayerManager(this);
         }
+    }
+    private void Start()
+    {
+        
     }
 
     public void TestFunction()

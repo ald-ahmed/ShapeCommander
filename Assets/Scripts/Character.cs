@@ -119,7 +119,7 @@ public class Character : Clickable
         //Debug.Log("Character clicked on!");
         if (friendly)//is mine
             Select(false);
-        else
+        else if (myManager.selectedCharacter.myState == Character.characterState.attack)
         {
             if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
                 myManager.AttackTarget(id);
@@ -237,6 +237,12 @@ public class Character : Clickable
     public void ToggleAttackButton()
     {
         attackButton.enabled = !attackButton.enabled;
+    }
+
+    public void EnableButtons()
+    {
+        attackButton.enabled = true;
+        moveButton.enabled = true;
     }
 
     public void SetFriendly(bool afriendly)

@@ -9,19 +9,24 @@ public class PlayerFace : NetworkBehaviour
     private MyControl m_placementControl;
     private PlayerManager m_playerManager;
 
+    private UIClickable m_endTurnButton;
+    private GameObject m_beam;
+    private bool m_isMyTurn = true;
+    Character[] units;
+    int myTeam;
     //your local player needs to have a recognizable name that allows it to be found for assigning network authority
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
         gameObject.name = "LocalPlayer";
         //m_target = GameObject.Find("Main Camera").transform;
-        
+
+        m_endTurnButton = GameObject.Find("EndTurnButton").GetComponent<UIClickable>();
+        m_beam = GameObject.Find("Beam");
+        m_endTurnButton.clickHandler += ClickedEndTurn;
 
 
-        int myTeam;
-     
-        Debug.Log("I can place the map");
-        
+
         if (GetComponent<NetworkIdentity>().isServer)
         {
             myTeam = 1;
@@ -29,7 +34,11 @@ public class PlayerFace : NetworkBehaviour
         }
         else
         {
+            m_isMyTurn = false;
+            
             myTeam = 0;
+            m_beam.SetActive(false);
+            m_endTurnButton.gameObject.SetActive(false);
         }
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {
@@ -40,7 +49,7 @@ public class PlayerFace : NetworkBehaviour
             }
         }
 
-        Character[] units = GameObject.FindObjectsOfType<Character>();
+        units = GameObject.FindObjectsOfType<Character>();
         foreach (Character c in units)
         {
             if (c.team != myTeam)
@@ -48,6 +57,7 @@ public class PlayerFace : NetworkBehaviour
                 c.SetFriendly(false);
             }
         }
+        
         //m_placementControl = GetComponent<MyControl>();
         //m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
        // m_placementControl.allowPlacement = true;
@@ -57,17 +67,60 @@ public class PlayerFace : NetworkBehaviour
     void Start()
     {
         
+
     }
 
     void Update()
     {
        
     }
-    public void myFunc()
+
+    public void FlipTurns()
     {
-        Debug.Log("MyFunc");
-        CmdSetSelectedCharacter(0);
+        if (isLocalPlayer)
+        {
+            m_isMyTurn = !m_isMyTurn;
+            Debug.Log("Is it my turn now: " + m_isMyTurn);
+
+            if (m_isMyTurn)
+            {
+                m_beam.SetActive(true);
+                foreach (Character c in units)
+                {
+                    if (c.team == myTeam)
+                    {
+                        c.GetComponent<CharacterGridMovement>().ResetRemainingMoves();
+                        c.EnableButtons();
+                        m_endTurnButton.gameObject.SetActive(true);
+                    }
+                }
+            }
+            else
+            {
+                m_beam.SetActive(false);
+                m_endTurnButton.gameObject.SetActive(false);
+            }
+        }
     }
+
+    public void ClickedEndTurn()
+    {
+        if (GetComponent<NetworkIdentity>().isServer)
+        {
+            GameObject.Find("PlayerManager").GetComponent<PlayerManager>().FlipTurns();
+
+        }
+        else
+            CmdFlipTurns();
+    }
+
+    [Command]
+    public void CmdFlipTurns()
+    {
+
+        GameObject.Find("PlayerManager").GetComponent<PlayerManager>().FlipTurns();
+    }
+    
 
     [Command]
     public void CmdTestCommand()

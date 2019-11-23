@@ -12,22 +12,25 @@ public class BannerManager : MonoBehaviour
     private const string WINNING_MESSAGE = "YOU WIN!";
     private const string LOSING_MESSAGE = "YOU LOST!";
 
+    [SerializeField]
     public Text turnText;
-    public Button endTurn;
+
+    [SerializeField]
+    public Image endTurn;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        turnText = GetComponent<Text>();
-        endTurn = GetComponent<Button>();
+        //turnText = GetComponent<Text>();
+        //endTurn = GetComponent<Button>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ShowOpponentsTurn();
     }
 
 

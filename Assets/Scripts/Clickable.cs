@@ -28,13 +28,13 @@ public abstract class Clickable : MonoBehaviour
     {
         if (_controller.TriggerValue > 0.2f && !pressed)
         {
-            Debug.Log("Trigger registered");
+            //Debug.Log("Trigger registered");
             pressed = true;
 
             //if being touched by laser pointer at this point
             if (highlighted)
             {
-                Debug.Log("highlighted, clicking");
+                //Debug.Log("highlighted, clicking");
                 OnClicked();
             }
             

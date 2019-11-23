@@ -9,7 +9,7 @@ public class PlayerManager : NetworkBehaviour
     //temporary bs
     public Character[] characters;
 
-    private Character selectedCharacter=null;
+    public Character selectedCharacter=null;
 
     private Character targetedEnemy = null;
 
@@ -73,6 +73,10 @@ public class PlayerManager : NetworkBehaviour
         
         
     }
+    public void FlipTurns()
+    {
+        RpcFlipTurns();
+    }
 
     public void AttackTarget(int target)
     {
@@ -121,6 +125,18 @@ public class PlayerManager : NetworkBehaviour
         }
         return null;
     }
+
+    [ClientRpc]
+    public void RpcFlipTurns()
+    {
+        PlayerFace[] pfs = GameObject.FindObjectsOfType<PlayerFace>();
+
+        foreach(PlayerFace p in pfs)
+        {
+            p.FlipTurns();
+        }
+    }
+
     [ClientRpc]
     public void RpcAttackTarget(int target)
     {

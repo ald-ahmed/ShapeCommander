@@ -5,20 +5,20 @@ using UnityEngine;
 using UnityEngine.XR.MagicLeap;
 
 public class MyControl : MonoBehaviour {
-    public MLPersistentBehavior persistentBehavior;
-    private GameObject _cube, _camera;
+
+    private GameObject _cube;
     private MLInputController _controller;
   
     private const float _distance = 2.0f;
 
-    public bool allowPlacement = false;
+    private bool allowPlacement = true;
     private bool hasClicked = false;
     private bool unpressed = false;
 
     private void Start() {
         _cube = GameObject.Find("Game");
-        persistentBehavior = _cube.GetComponent<MLPersistentBehavior>();
-        _camera = GameObject.Find("Main Camera");
+       
+        
       
         MLInput.Start();
         _controller = MLInput.GetController(MLInput.Hand.Left);
@@ -31,8 +31,9 @@ public class MyControl : MonoBehaviour {
         
         if (allowPlacement)
         {
-            if (_controller.TriggerValue > 0.2f&&unpressed)
+            if (_controller.IsBumperDown&&unpressed)
             {
+                Debug.Log("A");
                 hasClicked = true;
                // Vector3 origin = new Vector3(_camera.transform.position.x, _camera.transform.position.y, _camera.transform.position.z);
                 Vector3 origin = _controller.Position;
@@ -48,11 +49,13 @@ public class MyControl : MonoBehaviour {
                 //_cube.transform.rotation = Quaternion.Euler(0, GameObject.Find("Beam").transform.forward.y, 0);
                 // _cube.transform.position = origin + _camera.transform.forward * _distance;
                 //_cube.transform.rotation = _camera.transform.rotation;
-                //persistentBehavior.UpdateBinding();
+               
             }
             else if (hasClicked)
             {
+                Debug.Log("B");
                 allowPlacement = false;
+                
                 Vector3 v = _cube.transform.rotation.eulerAngles;
                 _cube.transform.rotation = Quaternion.Euler(0, v.y, 0);//flatten it out
                 
@@ -65,6 +68,7 @@ public class MyControl : MonoBehaviour {
             }
             else
             {
+                Debug.Log("C");
                 unpressed = true;
             }
         }

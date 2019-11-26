@@ -25,7 +25,7 @@ public class Character : Clickable
     [SerializeField]
     private UIClickable attackButton;
 
-    private CharacterGridMovement moveScript;
+    public CharacterGridMovement moveScript;
 
     private CharacterAttack attackScript;
 
@@ -119,7 +119,7 @@ public class Character : Clickable
         //Debug.Log("Character clicked on!");
         if (friendly)//is mine
             Select(false);
-        else
+        else if (myManager.selectedCharacter.myState == Character.characterState.attack)
         {
             if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
                 myManager.AttackTarget(id);
@@ -159,7 +159,17 @@ public class Character : Clickable
     public void Deselect(bool fromManager)
     {
         if (!fromManager)
-            myManager.SetSelectedCharacter(null);
+        {
+            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                myManager.SetSelectedCharacter(null);
+            else
+            {
+                //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
+                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSetSelectedCharacter(-1);
+               
+            }
+            //myManager.SetSelectedCharacter(null);
+        }
         selected = false;
         options.SetActive(false);
         UnHighlighted();
@@ -201,16 +211,18 @@ public class Character : Clickable
         options.SetActive(false);
     }
 
+    private IEnumerator coroutine;
+
     public void AttackEnemy(Character enemy)
     {
         attackScript.Attack(enemy);
-        WaitToIdle(enemy);
-
+        coroutine = WaitToIdle(enemy);
+        StartCoroutine(coroutine);
     }
 
     IEnumerator WaitToIdle(Character enemy)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         myState = characterState.idle;
         if (enemy.current_health > 0)
         {
@@ -218,13 +230,19 @@ public class Character : Clickable
             enemy.myState = characterState.idle;
         } else
         {
-            Destroy(enemy);
+            Destroy(enemy.gameObject);
         }
     }
 
     public void ToggleAttackButton()
     {
         attackButton.enabled = !attackButton.enabled;
+    }
+
+    public void EnableButtons()
+    {
+        attackButton.enabled = true;
+        moveButton.enabled = true;
     }
 
     public void SetFriendly(bool afriendly)

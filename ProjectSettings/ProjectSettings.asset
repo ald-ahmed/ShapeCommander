@@ -636,7 +636,7 @@ PlayerSettings:
     m_ModelFolderPath: 
     m_PortalFolderPath: 
   luminCert:
-    m_CertPath: D:/UnityWork/ShapeCommander/538chris2.cert
+    m_CertPath: /Users/Ngrabar/MagicLeap/privatekey/magic_leap.cert
     m_SignPackage: 1
   luminIsChannelApp: 0
   luminVersion:

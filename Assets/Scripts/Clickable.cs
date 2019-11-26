@@ -49,14 +49,19 @@ public abstract class Clickable : MonoBehaviour
     public virtual void Highlighted()
     {
         //Debug.Log("Highlighted");
-        if(!highlighted)
+        if (!highlighted)
+        {
             highlighted = true;
+            _controller.StartFeedbackPatternVibe(MLInputControllerFeedbackPatternVibe.Bump, MLInputControllerFeedbackIntensity.Low);
+        }
     }
     public virtual void UnHighlighted()
     {
         //Debug.Log("Unhighlighted");
-        if(highlighted)
+        if (highlighted)
+        {
             highlighted = false;
+        }
     }
 
     protected abstract void OnClicked();

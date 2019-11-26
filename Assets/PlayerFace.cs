@@ -10,6 +10,9 @@ public class PlayerFace : NetworkBehaviour
     private PlayerManager m_playerManager;
 
     private UIClickable m_endTurnButton;
+
+    private BannerManager m_bannerManager;
+
     private GameObject m_beam;
     private bool m_isMyTurn = true;
     Character[] units;
@@ -20,7 +23,7 @@ public class PlayerFace : NetworkBehaviour
         base.OnStartLocalPlayer();
         gameObject.name = "LocalPlayer";
         //m_target = GameObject.Find("Main Camera").transform;
-
+        m_bannerManager = GameObject.Find("Turn Banner").GetComponent<BannerManager>();
         m_endTurnButton = GameObject.Find("EndTurnButton").GetComponent<UIClickable>();
         m_beam = GameObject.Find("Beam");
         m_endTurnButton.clickHandler += ClickedEndTurn;
@@ -30,7 +33,7 @@ public class PlayerFace : NetworkBehaviour
         if (GetComponent<NetworkIdentity>().isServer)
         {
             myTeam = 1;
-
+            m_bannerManager.ShowYourTurn();
         }
         else
         {
@@ -38,7 +41,8 @@ public class PlayerFace : NetworkBehaviour
             
             myTeam = 0;
             m_beam.SetActive(false);
-            m_endTurnButton.gameObject.SetActive(false);
+            m_bannerManager.ShowOpponentsTurn();
+            //m_endTurnButton.gameObject.SetActive(false);
         }
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {
@@ -91,14 +95,16 @@ public class PlayerFace : NetworkBehaviour
                     {
                         c.GetComponent<CharacterGridMovement>().ResetRemainingMoves();
                         c.EnableButtons();
-                        m_endTurnButton.gameObject.SetActive(true);
+                        m_bannerManager.ShowYourTurn();
+                       // m_endTurnButton.gameObject.SetActive(true);
                     }
                 }
             }
             else
             {
                 m_beam.SetActive(false);
-                m_endTurnButton.gameObject.SetActive(false);
+                m_bannerManager.ShowOpponentsTurn();
+               // m_endTurnButton.gameObject.SetActive(false);
             }
         }
     }

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8245593248110967096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8245593248110967102}
+  - component: {fileID: 8245593248110967097}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8245593248110967102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8245593248110967096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.02, y: 0, z: -10.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8245593248110967097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8245593248110967096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2667a0ad68a09438d824bd837b9c836e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 678eba68b6c0c4102b7492a6497992c6, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Footstep
+    clip: {fileID: 8300000, guid: c14052fb9f2b74e97bd0c0d6ab1899e8, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: SwordSwing
+    clip: {fileID: 8300000, guid: 014e0a03e581f441a8d46d9b44e66d72, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: HighlightNoise
+    clip: {fileID: 8300000, guid: 65e8ca75ce16c4dfe9f06606deba0ea7, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Arrow
+    clip: {fileID: 8300000, guid: 6980ca9fbb61c4e4c8a0f0b288821fa5, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: MagicSpell
+    clip: {fileID: 8300000, guid: a352c3d200e6c4bafa0206303d87616b, type: 3}
+    volume: 0.723
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1

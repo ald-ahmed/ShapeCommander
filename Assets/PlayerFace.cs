@@ -5,77 +5,122 @@ using UnityEngine.Networking;
 using UnityEngine.XR.MagicLeap;
 public class PlayerFace : NetworkBehaviour
 {
-    private Transform m_target;
-    private bool m_canPlaceMap = false;
+    //private Transform m_target;
     private MyControl m_placementControl;
     private PlayerManager m_playerManager;
 
+    private UIClickable m_endTurnButton;
+    private GameObject m_beam;
+    private bool m_isMyTurn = true;
+    Character[] units;
+    int myTeam;
     //your local player needs to have a recognizable name that allows it to be found for assigning network authority
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
         gameObject.name = "LocalPlayer";
-        //CmdTestCommand();
-    }
+        //m_target = GameObject.Find("Main Camera").transform;
 
-    void Start()
-    {
-        m_target = GameObject.Find("Main Camera").transform;
-        m_placementControl = GetComponent<MyControl>();
-        m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
-        List<MLPCF> pcfList = new List<MLPCF>();
-        MLPersistentCoordinateFrames.GetAllPCFs(out pcfList);
-        
-        foreach(MLPCF p in pcfList)
-        {
-            Debug.Log("PCF: " + p.ToString());
-        }
+        m_endTurnButton = GameObject.Find("EndTurnButton").GetComponent<UIClickable>();
+        m_beam = GameObject.Find("Beam");
+        m_endTurnButton.clickHandler += ClickedEndTurn;
 
-        int myTeam;
-        m_canPlaceMap = true;
-        Debug.Log("I can place the map");
-        m_placementControl.allowPlacement = true;
+
+
         if (GetComponent<NetworkIdentity>().isServer)
         {
             myTeam = 1;
-            
+
         }
         else
         {
+            m_isMyTurn = false;
+            
             myTeam = 0;
+            m_beam.SetActive(false);
+            m_endTurnButton.gameObject.SetActive(false);
         }
         if (GetComponent<NetworkIdentity>().isLocalPlayer)
         {
             MeshRenderer[] m = GetComponentsInChildren<MeshRenderer>();
-            foreach(MeshRenderer p in m)
+            foreach (MeshRenderer p in m)
             {
                 p.enabled = false;
             }
         }
 
-        Character[] units = GameObject.FindObjectsOfType<Character>();
-        foreach(Character c in units)
+        units = GameObject.FindObjectsOfType<Character>();
+        foreach (Character c in units)
         {
             if (c.team != myTeam)
             {
                 c.SetFriendly(false);
             }
         }
+        
+        //m_placementControl = GetComponent<MyControl>();
+        //m_playerManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
+       // m_placementControl.allowPlacement = true;
+        //CmdTestCommand();
+    }
+
+    void Start()
+    {
+        
+
     }
 
     void Update()
     {
-        if (m_target != null)
+       
+    }
+
+    public void FlipTurns()
+    {
+        if (isLocalPlayer)
         {
-            transform.position = m_target.position;
-            transform.rotation = m_target.rotation;
+            m_isMyTurn = !m_isMyTurn;
+            Debug.Log("Is it my turn now: " + m_isMyTurn);
+
+            if (m_isMyTurn)
+            {
+                m_beam.SetActive(true);
+                foreach (Character c in units)
+                {
+                    if (c.team == myTeam)
+                    {
+                        c.GetComponent<CharacterGridMovement>().ResetRemainingMoves();
+                        c.EnableButtons();
+                        m_endTurnButton.gameObject.SetActive(true);
+                    }
+                }
+            }
+            else
+            {
+                m_beam.SetActive(false);
+                m_endTurnButton.gameObject.SetActive(false);
+            }
         }
     }
-    public void myFunc()
+
+    public void ClickedEndTurn()
     {
-        Debug.Log("MyFunc");
-        CmdSetSelectedCharacter(0);
+        if (GetComponent<NetworkIdentity>().isServer)
+        {
+            GameObject.Find("PlayerManager").GetComponent<PlayerManager>().FlipTurns();
+
+        }
+        else
+            CmdFlipTurns();
     }
+
+    [Command]
+    public void CmdFlipTurns()
+    {
+
+        GameObject.Find("PlayerManager").GetComponent<PlayerManager>().FlipTurns();
+    }
+    
 
     [Command]
     public void CmdTestCommand()
@@ -93,6 +138,7 @@ public class PlayerFace : NetworkBehaviour
 
     }
 
+    [Command]
     public void CmdAttackTarget(int id)
     {
         GameObject.Find("PlayerManager").GetComponent<PlayerManager>().AttackTarget(id);

@@ -9,25 +9,29 @@ public class PlayerManager : NetworkBehaviour
     //temporary bs
     public Character[] characters;
 
-    private Character selectedCharacter=null;
+    public Character selectedCharacter=null;
 
     private Character targetedEnemy = null;
 
     [SerializeField]
     private Grid grid;
 
-    private void Start()
+    private void Awake()
     {
-        foreach(Character c in characters)
+        foreach (Character c in characters)
         {
             c.SetPlayerManager(this);
         }
 
         ClickableHex[] tiles = GameObject.FindObjectsOfType<ClickableHex>();
-        foreach(ClickableHex c in tiles)
+        foreach (ClickableHex c in tiles)
         {
             c.SetPlayerManager(this);
         }
+    }
+    private void Start()
+    {
+        
     }
 
     public void TestFunction()
@@ -68,6 +72,10 @@ public class PlayerManager : NetworkBehaviour
             RpcSetSelected(id);
         
         
+    }
+    public void FlipTurns()
+    {
+        RpcFlipTurns();
     }
 
     public void AttackTarget(int target)
@@ -117,6 +125,18 @@ public class PlayerManager : NetworkBehaviour
         }
         return null;
     }
+
+    [ClientRpc]
+    public void RpcFlipTurns()
+    {
+        PlayerFace[] pfs = GameObject.FindObjectsOfType<PlayerFace>();
+
+        foreach(PlayerFace p in pfs)
+        {
+            p.FlipTurns();
+        }
+    }
+
     [ClientRpc]
     public void RpcAttackTarget(int target)
     {

@@ -30,7 +30,7 @@ public class BannerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowOpponentsTurn();
+        ShowYourTurn();
     }
 
 

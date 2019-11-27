@@ -30,11 +30,11 @@ public class BannerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShowYourTurn();
+       // ShowOpponentsTurn();
     }
 
 
-    void ShowYourTurn()
+    public void ShowYourTurn()
     {
         turnText.text = YOUR_TURN_MESSAGE;
         endTurn.gameObject.SetActive(true);
@@ -43,7 +43,7 @@ public class BannerManager : MonoBehaviour
     }
 
 
-    void ShowOpponentsTurn()
+    public void ShowOpponentsTurn()
     {
         turnText.text = OPPONENT_TURN_MESSAGE;
         endTurn.gameObject.SetActive(false);
@@ -52,7 +52,7 @@ public class BannerManager : MonoBehaviour
     }
 
 
-    void ShowWinMessage()
+    public void ShowWinMessage()
     {
         turnText.text = OPPONENT_TURN_MESSAGE;
         endTurn.gameObject.SetActive(false);
@@ -61,7 +61,7 @@ public class BannerManager : MonoBehaviour
 
     }
 
-    void ShowLostMessage()
+    public void ShowLostMessage()
     {
         turnText.text = LOSING_MESSAGE;
         endTurn.gameObject.SetActive(false);

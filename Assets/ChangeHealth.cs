@@ -7,7 +7,7 @@ public class ChangeHealth : MonoBehaviour
 {
 
 
-    public Image myImage;
+    private Image myImage;
 
     // Start is called before the first frame update
     void Start()

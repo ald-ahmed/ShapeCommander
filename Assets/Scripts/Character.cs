@@ -104,7 +104,7 @@ public class Character : Clickable
     public override void Highlighted()
     {
         base.Highlighted();
-        
+        GameObject.Find("HealthBar").GetComponent<ChangeHealth>().setHealth((float)((float)current_health / (float)total_health));
         highlight.SetActive(true);
     }
     public override void UnHighlighted()
@@ -149,6 +149,7 @@ public class Character : Clickable
         selected = true;
         highlight.SetActive(true);
         options.SetActive(true);
+        
     }
 
     public void DeselectClicked()

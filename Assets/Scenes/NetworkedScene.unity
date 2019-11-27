@@ -18153,6 +18153,7 @@ MonoBehaviour:
   - {fileID: 994298437}
   - {fileID: 1248277608}
   - {fileID: 1272275692}
+  selectedCharacter: {fileID: 0}
   grid: {fileID: 1445694181}
 --- !u!1 &8109669378432734808
 GameObject:

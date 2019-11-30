@@ -2,7 +2,7 @@
 
 
 USES = \
-	D:\UnityWork\ShapeCommander\Temp/StagingArea\assets \
+	/Users/Ngrabar/Unity/Magic_Leap/template_repo/Temp/StagingArea/assets \
 
 
 ######### DO NOT EDIT ABOVE #########

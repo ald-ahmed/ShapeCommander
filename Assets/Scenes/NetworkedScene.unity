@@ -4505,7 +4505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+  attackEffect: {fileID: 1764308443362498, guid: 6d7cc81026e11b041a930c7840a41bda,
     type: 3}
   attackRange: 3
   aController: {fileID: 994298435}
@@ -10265,7 +10265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEffect: {fileID: 1292771579275088, guid: 87f4f01368292214aa774b477313a612,
+  attackEffect: {fileID: 1764308443362498, guid: 6d7cc81026e11b041a930c7840a41bda,
     type: 3}
   attackRange: 3
   aController: {fileID: 1621580026}

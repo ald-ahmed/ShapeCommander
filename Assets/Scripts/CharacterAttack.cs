@@ -13,7 +13,7 @@ public class CharacterAttack : MonoBehaviour
     private Character attackingCharacter;
     [SerializeField] int attackPower;
 
-    private float aWeight = .5f;
+    private float aWeight = .9f;
 
     private GameObject thisAttack;
     private IEnumerator coroutine;
@@ -54,6 +54,7 @@ public class CharacterAttack : MonoBehaviour
 
     public void Attack(Character target)
     {
+        UnDisplayAttackRange();
         Tile myLocation = gManager.currentTile;
         List<Tile> attackTiles = gameGrid.TilesInRange(myLocation, attackRange);
 
@@ -79,11 +80,11 @@ public class CharacterAttack : MonoBehaviour
                 //Instatiate attack effect (we'll figure out a better placement vector)
                 Vector3 effectPos = aWeight * transform.position + (1 - aWeight) * target.transform.position;
                 thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
-                UnDisplayAttackRange();
+                
                 // Remove attack option for turn
-                attackingCharacter.ToggleAttackButton();
+                //attackingCharacter.ToggleAttackButton();
                 coroutine = WaitToDestroy();
-        	StartCoroutine(coroutine);
+                StartCoroutine(coroutine);
             }
         }
     }
@@ -91,7 +92,7 @@ public class CharacterAttack : MonoBehaviour
     IEnumerator WaitToDestroy()
     {
         yield return new WaitForSeconds(5);
-        Destroy(thisAttack.gameObject);
+        //Destroy(thisAttack.gameObject);
         aController.AnimateIdle();
     }
 }

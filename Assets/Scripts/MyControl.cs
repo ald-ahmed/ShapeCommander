@@ -59,7 +59,7 @@ public class MyControl : MonoBehaviour {
                 Vector3 v = _cube.transform.rotation.eulerAngles;
                 _cube.transform.rotation = Quaternion.Euler(0, v.y, 0);//flatten it out
                 
-                Tile[] tiles=_cube.transform.Find("GameObject").GetComponentsInChildren<Tile>();
+                Tile[] tiles=_cube.transform.Find("Battle Ground/GameGrid").GetComponentsInChildren<Tile>();
                 foreach(Tile t in tiles)
                 {
                     //t.PositionUpdated();

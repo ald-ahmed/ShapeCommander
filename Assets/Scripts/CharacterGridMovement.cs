@@ -139,10 +139,10 @@ public class CharacterGridMovement : MonoBehaviour
             //Move along path with time
             float step = speed * Time.deltaTime;
             Vector3 tar = path[stepNum];
-            tar.y = tar.y + .08f;
+            tar.y = tar.y + .02f;
             transform.position = Vector3.MoveTowards(transform.position, tar, step);
             
-            if ((transform.position - tar).magnitude < 0.01)
+            if ((transform.position - tar).magnitude < 0.001)
             {
 
                 //Set next step for next destination
@@ -163,7 +163,7 @@ public class CharacterGridMovement : MonoBehaviour
                 else
                 {
                     Vector3 tarb = path[stepNum];
-                    tarb.y = tarb.y + .08f;
+                    tarb.y = tarb.y + .02f;
                     transform.LookAt(tarb);
                 }
 

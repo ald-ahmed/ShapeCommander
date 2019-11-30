@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour {
 	public CubeIndex index;
     private LineRenderer lines;
     private LineRenderer rangeIndicator;
+    private Grid myGrid;
 
     [SerializeField]
 	private bool occupied = false;
@@ -29,7 +30,9 @@ public class Tile : MonoBehaviour {
         //move the line renderer to where the hex actually is 
         lines = GetComponent<LineRenderer>();
         rangeIndicator = transform.Find("range").GetComponent<LineRenderer>();
-        
+
+        myGrid = GetComponentInParent<Grid>();
+
         rangeIndicator.startWidth = 0.02f;
         rangeIndicator.endWidth = 0.02f;
         lines.startWidth = 0.04f;
@@ -55,9 +58,9 @@ public class Tile : MonoBehaviour {
     public void PositionUpdatedPlus(float rot)
     {
         for (int vert = 0; vert <= 6; vert++)
-            rangeIndicator.SetPosition(vert, Tile.CornerPlus(new Vector3(transform.position.x, transform.position.y, transform.position.z), GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy, rot));
+            rangeIndicator.SetPosition(vert, Tile.CornerPlus(new Vector3(transform.position.x, transform.position.y, transform.position.z), myGrid.hexRadius, vert, HexOrientation.Pointy, rot));
         for (int vert = 0; vert <= 6; vert++)
-            lines.SetPosition(vert, Tile.CornerPlus(transform.position, GetComponentInParent<Grid>().hexRadius, vert, HexOrientation.Pointy,rot));//1 = hexRadius, 
+            lines.SetPosition(vert, Tile.CornerPlus(transform.position, myGrid.hexRadius, vert, HexOrientation.Pointy,rot));//1 = hexRadius, 
     }
 
     public void SetInRange(bool inRange)//in range of attack or movement?  movement should be blue or green or something while attack is red
@@ -158,7 +161,7 @@ public class Tile : MonoBehaviour {
         float angle = 60 * corner;
         if (orientation == HexOrientation.Pointy)//add rotation.y maybe
             angle += 30;
-        Debug.Log("yrot: " + yRot);
+        //Debug.Log("yrot: " + yRot);
         angle -= yRot;
         angle *= Mathf.PI / 180;
         return new Vector3(origin.x + radius * Mathf.Cos(angle), origin.y, origin.z + radius * Mathf.Sin(angle));//y was 0.0

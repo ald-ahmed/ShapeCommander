@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NetworkedScene 2.unity
     guid: b1446e502eaf140f890c1f88237965e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/NetworkedScene 3.unity
     guid: 1ca71e97bc80347b49201f80545529d0
+  - enabled: 1
+    path: Assets/Scenes/Nuthin2FkWith.unity
+    guid: 9f39bda995eae684297966928a6ae210
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2ba4dbd235ed941bb8fdb5a40ab00f22,
       type: 2}

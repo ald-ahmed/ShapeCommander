@@ -7,7 +7,9 @@ public class Control6DOF : MonoBehaviour
 {
     #region Private Variables
     private MLInputController _controller;
+
     #endregion
+
 
     #region Unity Methods
     void Start()

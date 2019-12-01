@@ -4437,6 +4437,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: 3249369853126835048, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: -6874077036894729329, guid: acfc090bc8b9400488ed751056734d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acfc090bc8b9400488ed751056734d23, type: 3}
 --- !u!4 &994298434 stripped
 Transform:
@@ -7252,6 +7254,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: -6874077036894729329, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: 3249369853126835048, guid: acfc090bc8b9400488ed751056734d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acfc090bc8b9400488ed751056734d23, type: 3}
 --- !u!4 &1248277605 stripped
 Transform:
@@ -7498,6 +7502,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: -6874077036894729329, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: 3249369853126835048, guid: acfc090bc8b9400488ed751056734d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acfc090bc8b9400488ed751056734d23, type: 3}
 --- !u!4 &1272275688 stripped
 Transform:
@@ -10253,25 +10259,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 247041393564565558}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1621580031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621580027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackEffect: {fileID: 1764308443362498, guid: 6d7cc81026e11b041a930c7840a41bda,
-    type: 3}
-  attackRange: 3
-  aController: {fileID: 1621580026}
-  gManager: {fileID: 1621580028}
-  gameGrid: {fileID: 1445694181}
-  attackPower: 3
 --- !u!23 &1637488496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12884,6 +12871,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8109669378432734809}
     m_Modifications:
+    - target: {fileID: 3249369853126835048, guid: acfc090bc8b9400488ed751056734d23,
+        type: 3}
+      propertyPath: gManager
+      value: 
+      objectReference: {fileID: 1621580028}
+    - target: {fileID: 3249369853126835048, guid: acfc090bc8b9400488ed751056734d23,
+        type: 3}
+      propertyPath: gameGrid
+      value: 
+      objectReference: {fileID: 1445694181}
     - target: {fileID: 8351643500442697096, guid: acfc090bc8b9400488ed751056734d23,
         type: 3}
       propertyPath: m_Name
@@ -13057,6 +13054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8351643500442697091, guid: acfc090bc8b9400488ed751056734d23, type: 3}
+    - {fileID: -6874077036894729329, guid: acfc090bc8b9400488ed751056734d23, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: acfc090bc8b9400488ed751056734d23, type: 3}
 --- !u!23 &8109669378290073648
 MeshRenderer:

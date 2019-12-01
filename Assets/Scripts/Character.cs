@@ -51,6 +51,8 @@ public class Character : Clickable
 
     bool isMoving = false;
 
+    private ChangeHealth healthChanger;
+    private GameObject healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -73,8 +75,10 @@ public class Character : Clickable
             attackButton.clickHandler += AttackClicked;
         }
         highlight.SetActive(false);
-        
-        
+
+        healthBar = GameObject.Find("Health Bar");
+        healthChanger = healthBar.transform.Find("HealthBG/HealthBar").gameObject.GetComponent<ChangeHealth>();
+        healthBar.SetActive(false);
     }
 
     private void Awake()
@@ -104,14 +108,19 @@ public class Character : Clickable
     public override void Highlighted()
     {
         base.Highlighted();
-        GameObject.Find("HealthBar").GetComponent<ChangeHealth>().setHealth((float)((float)current_health / (float)total_health));
+        healthBar.SetActive(true);
+        healthChanger.setHealth((float)((float)current_health / (float)total_health));
+        //GameObject.Find("HealthBar").GetComponent<ChangeHealth>().setHealth((float)((float)current_health / (float)total_health));
         highlight.SetActive(true);
     }
     public override void UnHighlighted()
     {
         base.UnHighlighted();
-        if(!selected)
+        if (!selected)
+        {
             highlight.SetActive(false);
+        }
+        healthBar.SetActive(false); 
     }
 
     protected override void OnClicked()

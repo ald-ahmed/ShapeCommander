@@ -52,6 +52,8 @@ public class Character : Clickable
     bool isMoving = false;
 
     private ChangeHealth healthChanger;
+
+    [SerializeField]
     private GameObject healthBar;
 
     // Start is called before the first frame update
@@ -76,9 +78,9 @@ public class Character : Clickable
         }
         highlight.SetActive(false);
 
-        healthBar = GameObject.Find("Health Bar");
+        //healthBar = GameObject.Find("Health Bar");
         healthChanger = healthBar.transform.Find("HealthBG/HealthBar").gameObject.GetComponent<ChangeHealth>();
-        healthBar.SetActive(false);
+        //healthBar.SetActive(false);
     }
 
     private void Awake()

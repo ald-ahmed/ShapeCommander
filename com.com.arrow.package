@@ -2,7 +2,7 @@
 
 
 USES = \
-	/Users/Ngrabar/Unity/Magic_Leap/template_repo/Temp/StagingArea/assets \
+	H:\GitHub\ShapeCommander\Temp/StagingArea\assets \
 
 
 ######### DO NOT EDIT ABOVE #########

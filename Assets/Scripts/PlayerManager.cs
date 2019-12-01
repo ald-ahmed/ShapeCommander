@@ -7,7 +7,7 @@ public class PlayerManager : NetworkBehaviour
 {
 
     //temporary bs
-    public Character[] characters;
+    public List<Character> characters = new List<Character>();
 
     public Character selectedCharacter=null;
 
@@ -38,6 +38,46 @@ public class PlayerManager : NetworkBehaviour
     {
         Debug.Log("Test function");
         RpcTestCall();
+    }
+
+    public void KillPlayer(int id)
+    {
+        Character toRemove=null;
+        foreach (Character c in characters)
+        {
+            if (c.id == id)
+                toRemove = c;
+        }
+        if(toRemove)
+            characters.Remove(toRemove);
+
+        bool team1 = false;
+        bool team0 = false;
+        foreach(Character c in characters)
+        {
+            if (c.team == 0)
+                team0 = true;
+            else
+                team1 = true;
+        }
+
+        if (!team1)
+        {
+            DeclareVictory(0);
+        }
+        if (!team0)
+        {
+            DeclareVictory(1);
+        }
+    }
+
+    private void DeclareVictory(int team)
+    {
+        PlayerFace[] players = GameObject.FindObjectsOfType<PlayerFace>();
+        foreach(PlayerFace p in players)
+        {
+            p.WinnerDeclared(team);
+        }
     }
 
     [ClientRpc]

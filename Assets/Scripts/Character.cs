@@ -242,6 +242,7 @@ public class Character : Clickable
             enemy.myState = characterState.idle;
         } else
         {
+            myManager.KillPlayer(enemy.id);
             Destroy(enemy.gameObject);
         }
     }
@@ -266,5 +267,7 @@ public class Character : Clickable
           
         }
     }
+
+
 
 }

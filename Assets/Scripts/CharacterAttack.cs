@@ -79,7 +79,7 @@ public class CharacterAttack : MonoBehaviour
 
                 //Instatiate attack effect (we'll figure out a better placement vector)
                 Vector3 effectPos = aWeight * transform.position + (1 - aWeight) * target.transform.position;
-                thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
+              //  thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
                 
                 // Remove attack option for turn
                 //attackingCharacter.ToggleAttackButton();

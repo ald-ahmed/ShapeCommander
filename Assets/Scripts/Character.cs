@@ -230,6 +230,8 @@ public class Character : Clickable
         attackScript.Attack(enemy);
         Deselect(false);
         myState = characterState.idle;
+        //if (enemy.current_health > 0)
+           // 
         coroutine = WaitToIdle(enemy);
         StartCoroutine(coroutine);
 

@@ -32,7 +32,8 @@ public class AudioManager : MonoBehaviour
     }
 
     void Start() {
-        Play("MagicSpell");
+        Play("Theme");
+        Play("Rain");
     }
 
     public void Play (string name) {

@@ -135,7 +135,7 @@ public class CharacterGridMovement : MonoBehaviour
         //Only triggers after MoveTiles is called
         if(isMoving == true)
         {
-
+            
             //Move along path with time
             float step = speed * Time.deltaTime;
             Vector3 tar = path[stepNum];
@@ -151,6 +151,7 @@ public class CharacterGridMovement : MonoBehaviour
                 //If it is the last step, end there.
                 if (stepNum >= path.Count)
                 {
+                    AudioManager.instance.Stop("Footstep");
                     //Turn off animation
                     aController.AnimateIdle();
                     //Turn off movement
@@ -180,7 +181,7 @@ public class CharacterGridMovement : MonoBehaviour
         //Turn on movement animation
         //animator.SetBool("move", true);
         aController.AnimateMove();
-
+        AudioManager.instance.Play("Footstep");
         path = new List<Vector3>();
         for(int ind = 0; ind < movePath.Count; ind++)
         {

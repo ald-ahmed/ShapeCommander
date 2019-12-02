@@ -17,6 +17,8 @@ public class UIClickable : Clickable
     [SerializeField]
     private Color defaultColor;
 
+    private bool cursorLeft = true;
+
     protected override void OnClicked()
     {
         UnHighlighted();
@@ -26,8 +28,13 @@ public class UIClickable : Clickable
     public override void Highlighted()
     {
         base.Highlighted();
-        myImage.color = highlightedColor;
-
+        if (cursorLeft)
+        {
+            cursorLeft = false;
+            myImage.color = highlightedColor;
+            AudioManager.instance.Play("HighlightNoise");
+        }
+        
         //could also add a brief size increase while highlighted
         
     }
@@ -35,12 +42,14 @@ public class UIClickable : Clickable
     {
         base.UnHighlighted();
         myImage.color = defaultColor;
+        cursorLeft = true;
         
     }
     //TODO: Make the box collider match the Width of the Rect Transform so having different size buttons doesn't mean squashing and stretching the prefab
     void Start()
     {
         base.Start();
+        
         //get visual components
         myImage = gameObject.GetComponent<Image>();
         myImage.color = defaultColor;

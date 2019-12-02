@@ -230,6 +230,19 @@ public class Character : Clickable
         attackScript.Attack(enemy);
         coroutine = WaitToIdle(enemy);
         StartCoroutine(coroutine);
+
+        if (characterType == "Knight")
+        {
+            AudioManager.instance.Play("SwordSwing");
+        }
+        else if (characterType == "Mage")
+        {
+            AudioManager.instance.Play("MagicSpell");
+        }
+        else
+        {
+            AudioManager.instance.Play("Arrow");
+        }
     }
 
     IEnumerator WaitToIdle(Character enemy)

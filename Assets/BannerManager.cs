@@ -56,7 +56,7 @@ public class BannerManager : MonoBehaviour
     {
         turnText.text = WINNING_MESSAGE;
         endTurn.gameObject.SetActive(false);
-
+        AudioManager.instance.Play("Victory");
         // end game here  
 
     }
@@ -65,7 +65,7 @@ public class BannerManager : MonoBehaviour
     {
         turnText.text = LOSING_MESSAGE;
         endTurn.gameObject.SetActive(false);
-
+        AudioManager.instance.Play("Defeat");
         // end game here  
     }
 

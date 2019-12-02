@@ -54,7 +54,7 @@ public class BannerManager : MonoBehaviour
 
     public void ShowWinMessage()
     {
-        turnText.text = OPPONENT_TURN_MESSAGE;
+        turnText.text = WINNING_MESSAGE;
         endTurn.gameObject.SetActive(false);
 
         // end game here  

@@ -13,7 +13,7 @@ public class CharacterAttack : MonoBehaviour
     private Character attackingCharacter;
     [SerializeField] int attackPower;
 
-    private float aWeight = .9f;
+    private float aWeight = .8f;
 
     private GameObject thisAttack;
     private IEnumerator coroutine;
@@ -77,6 +77,13 @@ public class CharacterAttack : MonoBehaviour
                     target.animator.AnimateHit();
                 }
 
+                attackingCharacter.GetComponent<CapsuleCollider>().enabled = false;
+
+
+                if (attackingCharacter.characterType.Equals("Mage"))
+                {
+                    aWeight = 0f;
+                }
                 //Instatiate attack effect (we'll figure out a better placement vector)
                 Vector3 effectPos = aWeight * transform.position + (1 - aWeight) * target.transform.position;
                 thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
@@ -91,8 +98,13 @@ public class CharacterAttack : MonoBehaviour
 
     IEnumerator WaitToDestroy()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        if (attackingCharacter.characterType.Equals("Mage"))
+        {
+            Destroy(thisAttack.gameObject);
+        }
         //Destroy(thisAttack.gameObject);
+        attackingCharacter.GetComponent<CapsuleCollider>().enabled = true;
         aController.AnimateIdle();
     }
 }

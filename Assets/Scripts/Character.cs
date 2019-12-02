@@ -235,6 +235,7 @@ public class Character : Clickable
     IEnumerator WaitToIdle(Character enemy)
     {
         yield return new WaitForSeconds(5);
+        Deselect(false);
         myState = characterState.idle;
         if (enemy.current_health > 0)
         {

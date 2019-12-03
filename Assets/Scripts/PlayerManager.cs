@@ -45,8 +45,11 @@ public class PlayerManager : NetworkBehaviour
         Character toRemove=null;
         foreach (Character c in characters)
         {
-            if (c.id == id)
-                toRemove = c;
+            if (c)
+            {
+                if (c.id == id)
+                    toRemove = c;
+            }
         }
         if(toRemove)
             characters.Remove(toRemove);
@@ -55,11 +58,13 @@ public class PlayerManager : NetworkBehaviour
         bool team0 = false;
         foreach(Character c in characters)
         {
-
-            if (c.team == 0)
-                team0 = true;
-            else
-                team1 = true;
+            if (c)
+            {
+                if (c.team == 0)
+                    team0 = true;
+                else
+                    team1 = true;
+            }
         }
 
         if (!team1)

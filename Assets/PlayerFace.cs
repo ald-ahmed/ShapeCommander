@@ -40,7 +40,9 @@ public class PlayerFace : NetworkBehaviour
             m_isMyTurn = false;
             
             myTeam = 0;
-            m_beam.SetActive(false);
+            m_beam.transform.GetComponentInChildren<Collides>().enabled = false;
+            m_beam.transform.GetComponentInChildren<LineRenderer>().enabled = false;
+            //m_beam.SetActive(false);
             m_bannerManager.ShowOpponentsTurn();
             //m_endTurnButton.gameObject.SetActive(false);
         }
@@ -85,6 +87,7 @@ public class PlayerFace : NetworkBehaviour
         {
             m_bannerManager.ShowWinMessage();
             m_beam.SetActive(false);
+
         }
         else
         {
@@ -102,21 +105,30 @@ public class PlayerFace : NetworkBehaviour
 
             if (m_isMyTurn)
             {
-                m_beam.SetActive(true);
+                //m_beam.SetActive(true);
+                m_beam.transform.GetComponentInChildren<LineRenderer>().enabled = true;
+                m_beam.transform.GetComponentInChildren<Collides>().enabled = true;
+                
                 foreach (Character c in units)
                 {
-                    if (c.team == myTeam)
+                    if (c)//null check
                     {
                         c.GetComponent<CharacterGridMovement>().ResetRemainingMoves();
-                        c.EnableButtons();
-                        m_bannerManager.ShowYourTurn();
-                       // m_endTurnButton.gameObject.SetActive(true);
+                        if (c.team == myTeam)
+                        {
+                            
+                            c.EnableButtons();
+                            m_bannerManager.ShowYourTurn();
+                            // m_endTurnButton.gameObject.SetActive(true);
+                        }
                     }
                 }
             }
             else
             {
-                m_beam.SetActive(false);
+                //m_beam.SetActive(false);
+                m_beam.transform.GetComponentInChildren<Collides>().enabled = false;
+                m_beam.transform.GetComponentInChildren<LineRenderer>().enabled = false;
                 m_bannerManager.ShowOpponentsTurn();
                // m_endTurnButton.gameObject.SetActive(false);
             }

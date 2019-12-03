@@ -13,7 +13,7 @@ public class CharacterAttack : MonoBehaviour
     private Character attackingCharacter;
     [SerializeField] int attackPower;
 
-    private float aWeight = .8f;
+    private float aWeight = .6f;
 
     private GameObject thisAttack;
     private IEnumerator coroutine;

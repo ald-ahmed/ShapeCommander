@@ -3167,7 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c55cc2f2fa1e984bbd576708e0d9735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEffect: {fileID: 1764308443362498, guid: 6d7cc81026e11b041a930c7840a41bda,
+  attackEffect: {fileID: 1120835270511274, guid: 33cfc2755a55b7e4c86c9d7018efbaaa,
     type: 3}
   attackRange: 1
   aController: {fileID: 6222141417614364639}

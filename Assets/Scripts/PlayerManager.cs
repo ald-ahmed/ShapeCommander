@@ -55,6 +55,7 @@ public class PlayerManager : NetworkBehaviour
         bool team0 = false;
         foreach(Character c in characters)
         {
+
             if (c.team == 0)
                 team0 = true;
             else
@@ -160,8 +161,11 @@ public class PlayerManager : NetworkBehaviour
     {
         foreach(Character c in characters)
         {
-            if (c.id == i)
-                return c;
+            if (c)
+            {
+                if (c.id == i)
+                    return c;
+            }
         }
         return null;
     }

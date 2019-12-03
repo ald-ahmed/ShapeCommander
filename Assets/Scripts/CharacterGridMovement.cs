@@ -30,6 +30,9 @@ public class CharacterGridMovement : MonoBehaviour
         isMoving = false;
         remainingMoves = maxMovement;
         movingCharacter = this.gameObject.GetComponent<Character>();
+        List<Tile> initialPos = new List<Tile>();
+        initialPos.Add(currentTile);
+        MoveTiles(initialPos);
 
         // GetComponent<AnimationController>();
 

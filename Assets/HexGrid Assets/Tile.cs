@@ -91,8 +91,8 @@ public class Tile : MonoBehaviour {
 			//	rangeIndicator.endColor = Color.blue;
 				//break;
 			case OutlineState.OCCUPIED:
-				rangeIndicator.startColor = Color.yellow;
-				rangeIndicator.endColor = Color.yellow;
+                rangeIndicator.startColor = Color.black;
+                rangeIndicator.endColor = Color.black;
 				break;
 			case OutlineState.MOVEMENT:
 				rangeIndicator.startColor = Color.green;

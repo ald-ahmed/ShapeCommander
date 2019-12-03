@@ -241,7 +241,7 @@ public class Character : Clickable
         }
         else if (characterType == "Mage")
         {
-            AudioManager.instance.Play("MagicSpell");
+            //AudioManager.instance.Play("MagicSpell");
         }
         else
         {

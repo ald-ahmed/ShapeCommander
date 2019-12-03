@@ -13,7 +13,7 @@ public class CharacterAttack : MonoBehaviour
     private Character attackingCharacter;
     [SerializeField] int attackPower;
 
-    private float aWeight = .6f;
+    private float aWeight = .8f;
 
     private GameObject thisAttack;
     private IEnumerator coroutine;
@@ -57,6 +57,8 @@ public class CharacterAttack : MonoBehaviour
         UnDisplayAttackRange();
         Tile myLocation = gManager.currentTile;
         List<Tile> attackTiles = gameGrid.TilesInRange(myLocation, attackRange);
+        Vector3 yDisplacement;
+        Vector3 effectPos;
 
         for (int i = 0; i < attackTiles.Count; i++)
         {
@@ -66,34 +68,87 @@ public class CharacterAttack : MonoBehaviour
                 transform.LookAt(target.transform.position);
                 target.transform.LookAt(transform.position);
                 //Animate attack
+                yDisplacement.x = 0;
+                yDisplacement.y = .05f;
+                yDisplacement.z = 0;
+                effectPos.x = 0;
+                effectPos.y = 0f;
+                effectPos.z = 0;
                 aController.AnimateAttack();
-                target.current_health -= attackPower;
-                if (target.current_health <= 0)
-                {
-                    target.animator.AnimateDeath();
-                }
-                else
-                {
-                    target.animator.AnimateHit();
-                }
-
-                attackingCharacter.GetComponent<CapsuleCollider>().enabled = false;
-
-
                 if (attackingCharacter.characterType.Equals("Mage"))
                 {
-                    aWeight = 0f;
+                    coroutine = MageWaitToAnimate(target,yDisplacement,effectPos);
+                    StartCoroutine(coroutine);
+                } else
+                {
+                    aController.AnimateAttack();
+                    target.current_health -= attackPower;
+                    if (target.current_health <= 0)
+                    {
+                        target.animator.AnimateDeath();
+                    }
+                    else
+                    {
+                        target.animator.AnimateHit();
+                    }
+
+                    attackingCharacter.GetComponent<CapsuleCollider>().enabled = false;
+
+                    yDisplacement.x = 0;
+                    yDisplacement.y = .05f;
+                    yDisplacement.z = 0;
+
+                    if (attackingCharacter.characterType.Equals("Mage"))
+                    {
+                        aWeight = 0f;
+                        yDisplacement.y = 0f;
+                    }
+                    //Instatiate attack effect (we'll figure out a better placement vector)
+
+                    effectPos = (aWeight * transform.position + (1 - aWeight) * target.transform.position) + yDisplacement;
+                    thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
+
+                    // Remove attack option for turn
+                    //attackingCharacter.ToggleAttackButton();
+                    coroutine = WaitToDestroy();
+                    StartCoroutine(coroutine);
                 }
-                //Instatiate attack effect (we'll figure out a better placement vector)
-                Vector3 effectPos = aWeight * transform.position + (1 - aWeight) * target.transform.position;
-                thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
                 
-                // Remove attack option for turn
-                //attackingCharacter.ToggleAttackButton();
-                coroutine = WaitToDestroy();
-                StartCoroutine(coroutine);
             }
         }
+    }
+
+    IEnumerator MageWaitToAnimate(Character target, Vector3 yDisplacement, Vector3 effectPos)
+    {
+        yield return new WaitForSeconds(1.7f);
+        
+        target.current_health -= attackPower;
+        if (target.current_health <= 0)
+        {
+            target.animator.AnimateDeath();
+        }
+        else
+        {
+            target.animator.AnimateHit();
+        }
+
+        attackingCharacter.GetComponent<CapsuleCollider>().enabled = false;
+
+        yDisplacement.x = 0;
+        yDisplacement.y = .05f;
+        yDisplacement.z = 0;        
+        aWeight = 0f;
+        yDisplacement.y = 0f;
+        
+        //Instatiate attack effect (we'll figure out a better placement vector)
+
+        effectPos = (aWeight * transform.position + (1 - aWeight) * target.transform.position) + yDisplacement;
+        thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
+
+        // Remove attack option for turn
+        //attackingCharacter.ToggleAttackButton();
+        coroutine = WaitToDestroy();
+        StartCoroutine(coroutine);
     }
 
     IEnumerator WaitToDestroy()

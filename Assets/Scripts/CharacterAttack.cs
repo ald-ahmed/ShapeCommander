@@ -82,7 +82,7 @@ public class CharacterAttack : MonoBehaviour
                 }
                 else if (attackingCharacter.characterType.Equals("Ranger"))
                 {
-                    animationDelay = 0f;
+                    animationDelay = 0.0f;
                 } else
                 {
                     animationDelay = 0.7f;

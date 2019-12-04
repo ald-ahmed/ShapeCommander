@@ -130,17 +130,19 @@ public class Character : Clickable
         //Debug.Log("Character clicked on!");
         if (friendly)//is mine
             Select(false);
-        else if (myManager.selectedCharacter.myState == Character.characterState.attack)
-        {
-            if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
-                myManager.AttackTarget(id);
-            else
+        else if (myManager.selectedCharacter) {
+            if (myManager.selectedCharacter.myState == Character.characterState.attack)
             {
-                //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
-                GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdAttackTarget(id);
-                Debug.Log("Client Clicked");
+                if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
+                    myManager.AttackTarget(id);
+                else
+                {
+                    //GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().myFunc();
+                    GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdAttackTarget(id);
+                    Debug.Log("Client Clicked");
+                }
+
             }
-            
         }
     }
 

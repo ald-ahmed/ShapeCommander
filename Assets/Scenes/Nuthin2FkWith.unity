@@ -128239,6 +128239,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065533168}
   m_Mesh: {fileID: 313687165}
+--- !u!114 &2065821649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6222141417614364639, guid: 0c3459d2a9463d246a0c91d3209255b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2069083186593960237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2b5690d265f0b4ab633c42e80b5792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2073433515
 GameObject:
   m_ObjectHideFlags: 0
@@ -133829,6 +133841,11 @@ PrefabInstance:
       propertyPath: remainingMoves
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 4481090672505375161, guid: 0c3459d2a9463d246a0c91d3209255b6,
+        type: 3}
+      propertyPath: aController
+      value: 
+      objectReference: {fileID: 2065821649}
     - target: {fileID: 8020950183032568423, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}
       propertyPath: healthBar
@@ -133837,7 +133854,7 @@ PrefabInstance:
     - target: {fileID: 8020950183032568423, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}
       propertyPath: team
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2716567427562720308, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}
@@ -133888,7 +133905,7 @@ PrefabInstance:
     - target: {fileID: 8608643796957762367, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: team
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8608643796957762367, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}

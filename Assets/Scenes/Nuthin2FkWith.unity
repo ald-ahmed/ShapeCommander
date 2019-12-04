@@ -13893,8 +13893,8 @@ MonoBehaviour:
   - {fileID: 1272437108}
   - {fileID: 1596733495}
   - {fileID: 108395061}
-  - {fileID: 8351643500590672714}
-  selectedCharacter: {fileID: 1130264865}
+  - {fileID: 1130264865}
+  selectedCharacter: {fileID: 0}
   grid: {fileID: 736035520}
 --- !u!1 &241158130
 GameObject:
@@ -97678,7 +97678,7 @@ PrefabInstance:
         type: 3}
       propertyPath: currentTile
       value: 
-      objectReference: {fileID: 1171888106}
+      objectReference: {fileID: 54397922}
     - target: {fileID: 7107202490984953784, guid: bead31684b1c34514a6ef08a84b8deab,
         type: 3}
       propertyPath: m_Center.y

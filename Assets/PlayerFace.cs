@@ -83,16 +83,19 @@ public class PlayerFace : NetworkBehaviour
 
     public void WinnerDeclared(int winner)
     {
-        if (winner == myTeam)
+        if (isLocalPlayer)
         {
-            m_bannerManager.ShowWinMessage();
-            m_beam.SetActive(false);
+            if (winner == myTeam)
+            {
+                m_bannerManager.ShowWinMessage();
+                m_beam.SetActive(false);
 
-        }
-        else
-        {
-            m_bannerManager.ShowLostMessage();
-            m_beam.SetActive(false);
+            }
+            else
+            {
+                m_bannerManager.ShowLostMessage();
+                m_beam.SetActive(false);
+            }
         }
     }
 

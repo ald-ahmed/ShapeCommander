@@ -3063,8 +3063,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aController: {fileID: 6222141417614364639}
   gameGrid: {fileID: 0}
-  maxMovement: 4
-  remainingMoves: 4
+  maxMovement: 3
+  remainingMoves: 3
   currentTile: {fileID: 0}
   isMoving: 0
   speed: 0.1
@@ -3099,8 +3099,8 @@ MonoBehaviour:
   moveButton: {fileID: 5655150902787214811}
   attackButton: {fileID: 51074786654619741}
   moveScript: {fileID: 4481090672505375161}
-  total_health: 40
-  current_health: 40
+  total_health: 16
+  current_health: 16
   team: 0
   friendly: 1
   characterType: Knight
@@ -3160,7 +3160,7 @@ MonoBehaviour:
   aController: {fileID: 6222141417614364639}
   gManager: {fileID: 4481090672505375161}
   gameGrid: {fileID: 0}
-  attackPower: 1
+  attackPower: 12
 --- !u!114 &6222141417614364639
 MonoBehaviour:
   m_ObjectHideFlags: 0

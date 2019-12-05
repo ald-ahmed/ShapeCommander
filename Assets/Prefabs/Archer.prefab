@@ -1175,11 +1175,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackEffect: {fileID: 1249710063744722, guid: 5e1827a221a4ada4699ff6b2ca031caa,
     type: 3}
-  attackRange: 6
+  attackRange: 5
   aController: {fileID: 5907559244726139661}
   gManager: {fileID: 0}
   gameGrid: {fileID: 0}
-  attackPower: 6
+  attackPower: 2
 --- !u!114 &9080304696455913275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,8 +1194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aController: {fileID: 5907559244726139661}
   gameGrid: {fileID: 0}
-  maxMovement: 6
-  remainingMoves: 6
+  maxMovement: 7
+  remainingMoves: 7
   currentTile: {fileID: 0}
   isMoving: 0
   speed: 0.2
@@ -1216,8 +1216,8 @@ MonoBehaviour:
   moveButton: {fileID: 2727836446535840836}
   attackButton: {fileID: 4843203736055588420}
   moveScript: {fileID: 9080304696455913275}
-  total_health: 25
-  current_health: 25
+  total_health: 12
+  current_health: 12
   team: 0
   friendly: 1
   characterType: Archer

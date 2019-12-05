@@ -22,7 +22,7 @@ public class ClickableHex : Clickable
             else
             {
                 GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSendSelected(m_myTile.index);
-                myManager.SetSelectedCharacter(null);//new change
+                myManager.selectedCharacter.myState = Character.characterState.idle;
             }
 
 

@@ -20,7 +20,10 @@ public class ClickableHex : Clickable
             if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
                 myManager.SendSelectedCharacter(m_myTile.index);
             else
+            {
                 GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().CmdSendSelected(m_myTile.index);
+                myManager.SetSelectedCharacter(null);//new change
+            }
 
 
             

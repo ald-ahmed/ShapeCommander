@@ -73,8 +73,8 @@ public class PlayerFace : NetworkBehaviour
 
     void Start()
     {
-        ConnectionConfig myConfig = new ConnectionConfig();
-        myConfig.DisconnectTimeout = 300000;
+        //ConnectionConfig myConfig = new ConnectionConfig();
+        //myConfig.DisconnectTimeout = 300000;
         //myConfig.PingTimeout = 100000;
     }
 

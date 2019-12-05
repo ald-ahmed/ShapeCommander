@@ -13,6 +13,7 @@ public class AnimationController : MonoBehaviour
     private const string ATTACK_ANIMATION_BOOL = "attack";
     private const string MOVE_ANIMATION_BOOL = "move";
     private const string HIT_ANIMATION_BOOL = "hit";
+    private const string DANCE_ANIMATION_BOOL = "dance";
 
     #endregion
 
@@ -50,6 +51,11 @@ public class AnimationController : MonoBehaviour
     public void AnimateHit()
     {
         Animate(HIT_ANIMATION_BOOL);
+    }
+
+    public void AnimateDance()
+    {
+        Animate(DANCE_ANIMATION_BOOL);
     }
 
     #endregion

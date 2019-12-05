@@ -80,12 +80,15 @@ public class PlayerManager : NetworkBehaviour
     private void DeclareVictory(int team)
     {
         PlayerFace[] players = GameObject.FindObjectsOfType<PlayerFace>();
-        foreach(PlayerFace p in players)
+        foreach (PlayerFace p in players)
         {
             p.WinnerDeclared(team);
         }
+        foreach (Character c in characters)
+        {
+            c.animator.AnimateDance();
+        }
     }
-
     [ClientRpc]
     public void RpcTestCall()
     {

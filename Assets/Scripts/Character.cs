@@ -263,6 +263,7 @@ public class Character : Clickable
             enemy.myState = characterState.idle;
         } else
         {
+            enemy.moveScript.currentTile.SetUnoccupied();
             myManager.KillPlayer(enemy.id);
             Destroy(enemy.gameObject);
         }

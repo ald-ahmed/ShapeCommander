@@ -135973,12 +135973,12 @@ PrefabInstance:
     - target: {fileID: 4481090672505375161, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}
       propertyPath: maxMovement
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4481090672505375161, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}
       propertyPath: remainingMoves
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4481090672505375161, guid: 0c3459d2a9463d246a0c91d3209255b6,
         type: 3}

@@ -75,12 +75,12 @@ public class PlayerFace : NetworkBehaviour
     {
         ConnectionConfig myConfig = new ConnectionConfig();
         myConfig.DisconnectTimeout = 300000;
-        myConfig.PingTimeout = 100000;
+        //myConfig.PingTimeout = 100000;
     }
 
     void Update()
     {
-        if (!isServer && lastPing + Time.deltaTime > 5.0)
+        if (!isServer &&  Time.deltaTime - lastPing > 5.0)
         {
             lastPing = Time.deltaTime;
             CmdKeepAlive();

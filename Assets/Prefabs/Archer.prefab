@@ -1194,8 +1194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aController: {fileID: 5907559244726139661}
   gameGrid: {fileID: 0}
-  maxMovement: 7
-  remainingMoves: 7
+  maxMovement: 6
+  remainingMoves: 6
   currentTile: {fileID: 0}
   isMoving: 0
   speed: 0.2

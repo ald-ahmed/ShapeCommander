@@ -9,14 +9,13 @@ public class ClickableHex : Clickable
 
     protected override void OnClicked()
     {
-        Debug.Log("CLICKED");
         if (myManager.GetSelectedCharacter() == null)
         {
             Debug.Log("Selected character is null");
         }
         else if (myManager.GetSelectedCharacter().myState == Character.characterState.move)
         {
-            Debug.Log("selected character should move");//going to move this stuff to the PlayerManager for networking
+            //Debug.Log("selected character should move");//going to move this stuff to the PlayerManager for networking
 
             if (GameObject.Find("LocalPlayer").GetComponent<PlayerFace>().isServer)
                 myManager.SendSelectedCharacter(m_myTile.index);
@@ -43,7 +42,6 @@ public class ClickableHex : Clickable
     public override void UnHighlighted()
     {
         base.UnHighlighted();
-        Debug.Log("Unhighlight");
         m_myTile.UnHighlight();
     }
 

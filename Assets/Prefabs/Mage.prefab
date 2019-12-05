@@ -246,11 +246,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackEffect: {fileID: 1593574840045950, guid: 45ae8ce3527dfcf46933282f370e9275,
     type: 3}
-  attackRange: 5
+  attackRange: 7
   aController: {fileID: -5070259345990951279}
   gManager: {fileID: 789025302459192887}
   gameGrid: {fileID: 0}
-  attackPower: 5
+  attackPower: 6
 --- !u!114 &789025302459192887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aController: {fileID: -5070259345990951279}
   gameGrid: {fileID: 0}
-  maxMovement: 4
-  remainingMoves: 4
+  maxMovement: 5
+  remainingMoves: 5
   currentTile: {fileID: 0}
   isMoving: 0
   speed: 0.2

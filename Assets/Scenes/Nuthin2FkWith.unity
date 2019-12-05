@@ -39515,7 +39515,7 @@ MonoBehaviour:
     x: -2
     y: -3
     z: 5
-  occupied: 0
+  occupied: 1
 --- !u!23 &664185208
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40941,7 +40941,7 @@ MonoBehaviour:
     x: 0
     y: -3
     z: 3
-  occupied: 0
+  occupied: 1
 --- !u!23 &688186153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57097,7 +57097,7 @@ MonoBehaviour:
     x: -1
     y: -3
     z: 4
-  occupied: 0
+  occupied: 1
 --- !u!23 &913145385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87610,7 +87610,7 @@ MonoBehaviour:
     x: -3
     y: -3
     z: 6
-  occupied: 0
+  occupied: 1
 --- !u!23 &1412130374
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97061,6 +97061,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: id
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: team
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -97131,21 +97146,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: id
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: team
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!4 &1563234614 stripped
@@ -103043,6 +103043,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -103113,21 +103128,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!4 &1638212820 stripped
@@ -126451,7 +126451,7 @@ MonoBehaviour:
     x: -5
     y: 0
     z: 5
-  occupied: 0
+  occupied: 1
 --- !u!23 &2018243395
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -135811,6 +135811,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -135881,11 +135886,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!1001 &2069083186593960237

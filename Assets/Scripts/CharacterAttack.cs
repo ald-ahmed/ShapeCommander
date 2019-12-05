@@ -133,7 +133,7 @@ public class CharacterAttack : MonoBehaviour
         effectPos = (aWeight * transform.position + (1 - aWeight) * target.transform.position) + yDisplacement;
         thisAttack = Instantiate(attackEffect, effectPos, transform.rotation);
         // Remove attack option for turn
-        //attackingCharacter.ToggleAttackButton();
+        attackingCharacter.ToggleAttackButton();
         coroutine = WaitToDestroy(target);
         StartCoroutine(coroutine);
     }

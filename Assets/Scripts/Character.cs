@@ -9,6 +9,7 @@ public class Character : Clickable
 
 
     private GameObject highlight;
+    private GameObject highlightSmall;
 
     private GameObject options;
 
@@ -67,6 +68,7 @@ public class Character : Clickable
         myState = characterState.idle;
         //myManager = GameObject.Find("PlayerManager").GetComponent<PlayerManager>();
         highlight = transform.Find("Highlight").gameObject;//might be better to SerializeField these and drag n drop
+        highlightSmall = transform.Find("Highlight (1)").gameObject;
         
         if (friendly)
         {
@@ -283,7 +285,7 @@ public class Character : Clickable
         {
             friendly = false;
             highlight.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, .5f);
-          
+            highlightSmall.GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0, .5f);
         }
     }
 

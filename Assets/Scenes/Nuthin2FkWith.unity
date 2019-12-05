@@ -31315,7 +31315,7 @@ MonoBehaviour:
   m_NetworkPort: 7777
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
-  m_NetworkAddress: 192.168.1.184
+  m_NetworkAddress: 192.168.1.91
   m_DontDestroyOnLoad: 1
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
@@ -97061,6 +97061,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: id
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: team
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -97131,21 +97146,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: id
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: team
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!4 &1563234614 stripped
@@ -102965,6 +102965,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: team
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -103035,21 +103050,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: team
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!4 &1638212820 stripped
@@ -135733,6 +135733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnightT
       objectReference: {fileID: 0}
+    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 622579089}
     - target: {fileID: 6849078146514844480, guid: 15a34bb52b7454b96a478baabbcda688,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -135803,11 +135808,6 @@ PrefabInstance:
       propertyPath: gameGrid
       value: 
       objectReference: {fileID: 736035520}
-    - target: {fileID: 1906822026584248401, guid: 15a34bb52b7454b96a478baabbcda688,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 622579089}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a34bb52b7454b96a478baabbcda688, type: 3}
 --- !u!1001 &2069083186593960237

@@ -17,6 +17,7 @@ public class PlayerFace : NetworkBehaviour
     private bool m_isMyTurn = true;
     Character[] units;
     int myTeam;
+    private float lastPing = 0.0f;
     //your local player needs to have a recognizable name that allows it to be found for assigning network authority
     public override void OnStartLocalPlayer()
     {
@@ -74,11 +75,17 @@ public class PlayerFace : NetworkBehaviour
     {
         ConnectionConfig myConfig = new ConnectionConfig();
         myConfig.DisconnectTimeout = 300000;
+        myConfig.PingTimeout = 100000;
     }
 
     void Update()
     {
-       
+        if (!isServer && lastPing + Time.deltaTime > 5.0)
+        {
+            lastPing = Time.deltaTime;
+            CmdKeepAlive();
+            Debug.Log("Sent a keepalive");
+        }
     }
 
     public void WinnerDeclared(int winner)
@@ -183,6 +190,12 @@ public class PlayerFace : NetworkBehaviour
     public void CmdSendSelected(CubeIndex target)
     {
         GameObject.Find("PlayerManager").GetComponent<PlayerManager>().SendSelectedCharacter(target);
+    }
+
+    [Command]
+    public void CmdKeepAlive()
+    {
+        Debug.Log("keepalive from client");
     }
 
 }

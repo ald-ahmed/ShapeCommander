@@ -7142,12 +7142,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
@@ -12672,12 +12672,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
@@ -21974,7 +21974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214550324010282, guid: 24158fb1437dc8e418d893939758764d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.031
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8599575387109836598, guid: 24158fb1437dc8e418d893939758764d,
         type: 3}
@@ -23237,12 +23237,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
@@ -31372,7 +31372,7 @@ MonoBehaviour:
     m_MinNetSimulatorTimeout: 1
     m_MaxNetSimulatorTimeout: 12000
   m_Channels: 
-  m_UseWebSockets: 1
+  m_UseWebSockets: 0
   m_UseSimulator: 0
   m_SimulatedLatency: 1
   m_PacketLossPercentage: 0
@@ -41837,12 +41837,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
@@ -97262,6 +97262,11 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7107202491733694268, guid: bead31684b1c34514a6ef08a84b8deab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bead31684b1c34514a6ef08a84b8deab, type: 3}
 --- !u!4 &1564530249 stripped
@@ -100097,12 +100102,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
@@ -136053,12 +136058,12 @@ PrefabInstance:
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: maxMovement
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
       propertyPath: remainingMoves
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9080304696455913275, guid: 142a4c8a04a36407cac4904b4779ec8d,
         type: 3}
